@@ -1,0 +1,18 @@
+.title {
+    color: #000;
+}
+.peteranderson {
+    color: black;
+}
+
+.me {
+    color: #bbc;
+}
+
+.navLink, .navLink:visited {
+    color: #444;
+}
+
+.navLink:active {
+    outline: dashed 1px #aab;
+}

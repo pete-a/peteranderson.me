@@ -1,0 +1,19 @@
+
+.open, .closed {
+    margin: 0 -20px;
+    overflow: hidden;
+}
+
+.open a {
+    display: block;
+}
+
+.closed {
+    max-height: 0px;
+    transition: all 500ms;
+}
+
+.open {
+    max-height: 260px;
+    transition: all 500ms;
+}

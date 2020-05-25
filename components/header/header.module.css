@@ -1,0 +1,74 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: auto;
+    min-height: 80px;
+}
+
+.title {
+    font-weight: bolder;
+    font-size: 1.2em;
+    margin-right: 2.4em;
+    transition: color 500ms;
+}
+
+.title a, .title a:visited {
+    text-decoration: none;
+    color: #000;
+}
+
+.spacer {
+    flex-grow: 1;
+}
+
+.sunMoonContainer {
+    margin-left: 5px;
+}
+
+.navLink {
+    display: block;
+    text-decoration: none;
+    padding: 20px 20px;
+    color: #999;    
+}
+
+.desktopLinks {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    align-items: center;
+}
+
+.hamburgerButtonContainer {
+    display: none;
+    cursor: pointer;
+}
+
+
+
+
+@media (max-width: 600px) {
+    .desktopLinks {
+        display: none;
+    }
+
+    .hamburgerButtonContainer {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        align-items: center;
+    }
+
+}
+
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,25 @@
+.show {
+    opacity: 1;
+    transition: opacity 500ms 50ms;
+}
+
+.hide {
+    opacity: 0;
+    transition: opacity 500ms 50ms;
+}
+
+.container {
+    opacity: 0;
+    animation: fade-in 1s 200ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

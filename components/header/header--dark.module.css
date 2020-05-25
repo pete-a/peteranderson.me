@@ -1,0 +1,23 @@
+.container {
+    color: white;
+}
+
+.title {
+    color: white;
+}
+
+.me {
+    color: rgb(209, 209, 230);
+}
+
+.peteranderson {
+    color: #fafafa;
+}
+
+.navLink:active {
+    outline: dashed 1px #aab;
+}
+
+.navLink, .navLink:visited {
+    color: #fff;
+}

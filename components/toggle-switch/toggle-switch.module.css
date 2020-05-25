@@ -1,0 +1,22 @@
+.toggle.checked {
+    left: 16px;
+}
+
+.container {
+    display: block;
+    width: 40px;
+    outline: 0;
+    user-select: none;
+}
+
+.toggle {
+    user-select: none;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: block;
+    position: relative;
+    left: 0px;
+    transition: left 200ms;
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
