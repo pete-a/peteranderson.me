@@ -18,8 +18,6 @@ interface IProps {
     setTheme: (theme: "light" | "dark") => any;
 }
 
-const a = () => console.log("A")
-
 export function Header({ theme, setTheme }: IProps) {
     const [hamburgerMenuStatus, setHamburgerMenuStatus] = useState<"open"|"closed">("closed");
     const themeStyles = theme === "dark" ? darkStyles : lightStyles;

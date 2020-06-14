@@ -10,7 +10,6 @@
 }
 
 .middleTwoBar {
-    opacity: 0;
     transform: rotate(0deg);
     transform-origin: center;
     transition: transform 500ms, opacity 500ms 1s;

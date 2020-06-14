@@ -3,6 +3,10 @@ import SvgHamburger from "./hamburger.svg";
 import { ThemeContext } from "../theme-context";
 import closedStyles from "./hamburger-menu-button--closed.module.css";
 import openStyles from "./hamburger-menu-button--open.module.css";
+import darkStyles from "./hamburger-menu-button--dark.module.css";
+import lightStyles from "./hamburger-menu-button--light.module.css";
+import styles from "./hamburger-menu-button.module.css";
+import { joinStyles } from "../../utils/styles";
 
 interface IProps {
     theme: "light" | "dark";
@@ -11,11 +15,12 @@ interface IProps {
 }
 
 export function HamburgerMenuButton(props: IProps) {
-    const styles = props.menuStatus === "open" ? openStyles : closedStyles;
+    const statusStyles = props.menuStatus === "open" ? openStyles : closedStyles;
+    const themeStyles = props.theme === "dark" ? darkStyles : lightStyles;
 
     return (
-        <div style={{padding: "20px", margin: "-20px" }} onClick={props.onClick}>
-            <SvgHamburger width="18px" color={props.theme === "dark" ? "#fff" : "#001F33"} topBottomBarsStyle={styles.topBottomBar} middleOneStyle={styles.middleOneBar} middleTwoStyle={styles.middleTwoBar} />
+        <div className={joinStyles(styles.container, props.menuStatus === "open" ? themeStyles.openContainer : styles.closedContainer)} onClick={props.onClick}>
+            <SvgHamburger width="20px" color={props.theme === "dark" ? "#fff" : "#001F33"} topBottomBarsStyle={statusStyles.topBottomBar} middleOneStyle={statusStyles.middleOneBar} middleTwoStyle={statusStyles.middleTwoBar} />
         </div>
     );
 }
