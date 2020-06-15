@@ -5,6 +5,7 @@ import { ThemeContext } from '../components/theme-context'
 import { Header } from '../components/header/header'
 import Head from "next/head";
 import { Footer } from '../components/footer/footer'
+import { useRouter } from "next/router";
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
@@ -14,6 +15,11 @@ export default function MyApp({ Component, pageProps }) {
         document.cookie = `theme=${theme}`
         document.body.setAttribute("class", `${theme}-theme`)
     }, [theme])
+
+    const router = useRouter();
+
+    const isResumePage = router.pathname.indexOf("resume") > -1;
+
     return (
         <>
             <Head>
@@ -22,8 +28,8 @@ export default function MyApp({ Component, pageProps }) {
             <div className="content">
                 <ThemeContext.Provider value={theme}>
                     <ThemeSwitcher onSwitch={setTheme}>
-                        <Header theme={theme} setTheme={setTheme} />
-                            <Component {...pageProps} />
+                        {!isResumePage && (<Header theme={theme} setTheme={setTheme} />)}
+                        <Component {...pageProps} />
                         <Footer />
                     </ThemeSwitcher>
                 </ThemeContext.Provider>
