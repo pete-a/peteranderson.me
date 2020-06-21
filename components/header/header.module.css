@@ -30,7 +30,6 @@
     display: block;
     text-decoration: none;
     padding: 20px 20px;
-    color: #999;    
 }
 
 .desktopLinks {
@@ -48,7 +47,7 @@
 
 
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .desktopLinks {
         display: none;
     }

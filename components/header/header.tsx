@@ -26,6 +26,12 @@ export function Header({ theme, setTheme }: IProps) {
         setHamburgerMenuStatus(hamburgerMenuStatus === "open" ? "closed" : "open")
     }
 
+    function onLinkClick() {
+        if (hamburgerMenuStatus === "open") {
+            setHamburgerMenuStatus("closed");
+        }
+    }
+
     return (
         <>
             <div className={joinStyles(styles.container, themeStyles.container)}>
@@ -39,8 +45,8 @@ export function Header({ theme, setTheme }: IProps) {
                     <a className={joinStyles(styles.navLink, themeStyles.navLink)} href="#experience">
                         Experience
                     </a>
-                    <a className={joinStyles(styles.navLink, themeStyles.navLink)} href="#blog">
-                        Blog
+                    <a className={joinStyles(styles.navLink, themeStyles.navLink)} href="#contact">
+                        Contact
                     </a>
                     <div className={styles.spacer} />
                     <div>
@@ -57,13 +63,13 @@ export function Header({ theme, setTheme }: IProps) {
             </div>
             <div>
                 <HamburgerMenu status={hamburgerMenuStatus} setStatus={setHamburgerMenuStatus}>
-                    <a className={joinStyles(styles.navLink, themeStyles.navLink)} href="#skills">
+                    <a onClick={onLinkClick} className={joinStyles(styles.navLink, themeStyles.navLink)} href="#skills">
                         Technical Skills
                     </a>
-                    <a className={joinStyles(styles.navLink, themeStyles.navLink)} href="#experience">
+                    <a onClick={onLinkClick} className={joinStyles(styles.navLink, themeStyles.navLink)} href="#experience">
                         Experience
                     </a>
-                    <a className={joinStyles(styles.navLink, themeStyles.navLink)} href="#blog">
+                    <a onClick={onLinkClick} className={joinStyles(styles.navLink, themeStyles.navLink)} href="#blog">
                         Blog
                     </a>
                     <div className={styles.spacer} />
