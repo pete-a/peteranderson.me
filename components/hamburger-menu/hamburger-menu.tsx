@@ -18,7 +18,7 @@ export const HamburgerMenu = ({ status, children, setStatus }: PropsWithChildren
         <ThemeContext.Consumer>
             {theme => {
                 const statusStyle = status === "open" ? styles.open : styles.closed;
-                const themeStyles = theme === "dark" ? darkStyles : lightStyles;
+                const themeStyles = theme.name === "dark" ? darkStyles : lightStyles;
                 return (
                     <div className={joinStyles(statusStyle, themeStyles.container)}>
                         {children}

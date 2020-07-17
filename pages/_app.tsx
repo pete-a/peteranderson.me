@@ -5,14 +5,15 @@ import { ThemeContext } from '../components/theme-context'
 import { Header } from '../components/header/header'
 import Head from "next/head";
 import { Footer } from '../components/footer/footer'
+import { Theme, lightTheme } from '../components/theme'
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
-    const [theme, setTheme] = useState<"light" | "dark" | undefined>(undefined);
+    const [theme, setTheme] = useState<Theme>(lightTheme);
 
     useEffect(() => {
-        document.cookie = `theme=${theme}`
-        document.body.setAttribute("class", `${theme}-theme`)
+        document.cookie = `theme=${theme.name}`
+        document.body.setAttribute("class", `${theme.name}-theme`)
     }, [theme])
     return (
         <>
@@ -23,7 +24,7 @@ export default function MyApp({ Component, pageProps }) {
                 <ThemeContext.Provider value={theme}>
                     <ThemeSwitcher onSwitch={setTheme}>
                         <Header theme={theme} setTheme={setTheme} />
-                            <Component {...pageProps} />
+                        <Component {...pageProps} />
                         <Footer />
                     </ThemeSwitcher>
                 </ThemeContext.Provider>

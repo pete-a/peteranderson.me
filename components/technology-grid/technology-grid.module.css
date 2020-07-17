@@ -16,8 +16,6 @@
 .logoContainer {
     width: 128px;
     height: 128px;
-    /* background-color: #efefef;
-    border: solid 1px #ccc; */
     display: flex;
     align-items: center;
     justify-content: center;

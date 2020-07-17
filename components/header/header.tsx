@@ -2,25 +2,22 @@ import React, { useState } from "react";
 import styles from "./header.module.css";
 import darkStyles from "./header--dark.module.css";
 import lightStyles from "./header--light.module.css";
-
-
 import { ThemedToggleSwitch } from "../toggle-switch/themed-toggle-switch";
 import { joinStyles } from "../../utils/styles";
 import { SunMoon } from "../sun-moon/sun-moon";
-import { loadGetInitialProps } from "next/dist/next-server/lib/utils";
-import SvgHamburger from "../hamburger-menu-button/hamburger.svg";
 import { HamburgerMenu } from "../hamburger-menu/hamburger-menu";
 import { ThemedHamburgerMenuButton } from "../hamburger-menu-button/hamburger-menu-button";
+import { Theme, lightTheme, darkTheme } from "../theme";
 
 
 interface IProps {
-    theme: "light" | "dark" | undefined;
-    setTheme: (theme: "light" | "dark") => any;
+    theme: Theme;
+    setTheme: (theme: Theme) => any;
 }
 
 export function Header({ theme, setTheme }: IProps) {
     const [hamburgerMenuStatus, setHamburgerMenuStatus] = useState<"open"|"closed">("closed");
-    const themeStyles = theme === "dark" ? darkStyles : lightStyles;
+    const themeStyles = theme.name === "dark" ? darkStyles : lightStyles;
 
     function toggleHamburgerMenuStatus() {
         setHamburgerMenuStatus(hamburgerMenuStatus === "open" ? "closed" : "open")
@@ -50,10 +47,10 @@ export function Header({ theme, setTheme }: IProps) {
                     </a>
                     <div className={styles.spacer} />
                     <div>
-                        {theme !== undefined && (<ThemedToggleSwitch checked={theme === "dark"} onToggle={() => setTheme(theme === "dark" ? "light" : "dark")} />)}
+                        <ThemedToggleSwitch checked={theme.name === "dark"} onToggle={() => setTheme(theme.name === "dark" ? lightTheme : darkTheme)} />
                     </div>
                     <div className={styles.sunMoonContainer}>
-                        <SunMoon mode={theme === "light" ? "sun" : "moon"} />
+                        <SunMoon mode={theme.name === "light" ? "sun" : "moon"} />
                     </div>
                 </div>
                 <div className={styles.hamburgerButtonContainer}>
@@ -75,10 +72,10 @@ export function Header({ theme, setTheme }: IProps) {
                     <div className={styles.spacer} />
                     <div style={{width: "100%", display: "flex", flexDirection: "row", padding: "20px", background: "rgba(0,0,0,0.02)"}}>
                         <div>
-                            {theme !== undefined && (<ThemedToggleSwitch checked={theme === "dark"} onToggle={() => setTheme(theme === "dark" ? "light" : "dark")} />)}
+                            <ThemedToggleSwitch checked={theme.name === "dark"} onToggle={() => setTheme(theme.name === "dark" ? lightTheme : darkTheme)} />)
                         </div>
                         <div className={styles.sunMoonContainer} >
-                            <SunMoon mode={theme === "light" ? "sun" : "moon"} />
+                            <SunMoon mode={theme.name === "light" ? "sun" : "moon"} />
                         </div>
                     </div>
                 </HamburgerMenu>

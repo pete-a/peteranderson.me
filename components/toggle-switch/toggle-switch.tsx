@@ -2,11 +2,12 @@ import React from "react";
 import darkStyles from "./toggle-switch--dark.module.css";
 import lightStyles from "./toggle-switch--light.module.css";
 import sharedStyles from "./toggle-switch.module.css";
+import { Theme, lightTheme } from "../theme";
 
 
 
-export const ToggleSwitch = (props: { checked: boolean, theme: "light" | "dark", onToggle: () => any }) => {
-    const themeStyles = props.theme === "light" ? lightStyles : darkStyles;
+export const ToggleSwitch = (props: { checked: boolean, theme: Theme, onToggle: () => any }) => {
+    const themeStyles = props.theme.name === "light" ? lightStyles : darkStyles;
 
     const checkedStyle = props.checked ? sharedStyles.checked : ""
     return (
@@ -18,5 +19,5 @@ export const ToggleSwitch = (props: { checked: boolean, theme: "light" | "dark",
 
 ToggleSwitch.defaultProps = {
     checked: false,
-    theme: "light"
+    theme: lightTheme
 }

@@ -10,7 +10,7 @@ export function Footer() {
     return (
         <ThemeContext.Consumer>
             {theme => {
-                const themeStyles = theme === "dark" ? darkStyles : lightStyles;
+                const themeStyles = theme.name === "dark" ? darkStyles : lightStyles;
                 return (
                     <div className={styles.container}>
                         <a href="/">
