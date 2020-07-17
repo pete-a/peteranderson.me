@@ -39,8 +39,8 @@ export function Header({ theme, setTheme }: IProps) {
                     <a href="/"><span className={themeStyles.peteranderson}>peteranderson</span><span className={themeStyles.me}>.me</span></a>
                 </div>
                 <div className={styles.desktopLinks}>
-                    <a className={joinStyles(styles.navLink, themeStyles.navLink)} href="#skills">
-                        Technical Skills
+                    <a className={joinStyles(styles.navLink, themeStyles.navLink)} href="#technology">
+                        Technology
                     </a>
                     <a className={joinStyles(styles.navLink, themeStyles.navLink)} href="#experience">
                         Experience
@@ -63,8 +63,8 @@ export function Header({ theme, setTheme }: IProps) {
             </div>
             <div>
                 <HamburgerMenu status={hamburgerMenuStatus} setStatus={setHamburgerMenuStatus}>
-                    <a onClick={onLinkClick} className={joinStyles(styles.navLink, themeStyles.navLink)} href="#skills">
-                        Technical Skills
+                    <a onClick={onLinkClick} className={joinStyles(styles.navLink, themeStyles.navLink)} href="#technology">
+                        Technology
                     </a>
                     <a onClick={onLinkClick} className={joinStyles(styles.navLink, themeStyles.navLink)} href="#experience">
                         Experience

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 5154 3778" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-269.073,-957.296)">
+        <g id="Layer-2" serif:id="Layer 2" transform="matrix(4.16667,0,0,4.16667,0,0)">
+            <g transform="matrix(-1,0,0,1,1331.37,-778.436)">
+                <rect x="601.653" y="1008.19" width="128.062" height="128.062" style="fill:rgb(0,157,219);"/>
+            </g>
+            <g transform="matrix(-1,0,0,1,1331.37,-456.45)">
+                <rect x="601.653" y="847.194" width="128.062" height="128.062" style="fill:rgb(0,157,219);"/>
+            </g>
+            <g transform="matrix(-1,0,0,1,1331.37,-134.466)">
+                <rect x="601.653" y="686.202" width="128.062" height="128.062" style="fill:rgb(0,157,219);"/>
+            </g>
+            <g transform="matrix(-1,0,0,1,1020.36,-456.45)">
+                <rect x="446.148" y="847.194" width="128.062" height="128.062" style="fill:rgb(0,157,219);"/>
+            </g>
+            <g transform="matrix(-1,0,0,1,1020.36,-134.466)">
+                <rect x="446.148" y="686.202" width="128.062" height="128.062" style="fill:rgb(0,157,219);"/>
+            </g>
+            <g transform="matrix(-1,0,0,1,709.35,-456.45)">
+                <rect x="290.644" y="847.194" width="128.062" height="128.062" style="fill:rgb(0,157,219);"/>
+            </g>
+            <g transform="matrix(-1,0,0,1,709.35,-134.466)">
+                <rect x="290.644" y="686.202" width="128.062" height="128.062" style="fill:rgb(0,157,219);"/>
+            </g>
+            <g transform="matrix(-1,0,0,1,401.999,-134.466)">
+                <rect x="136.968" y="686.202" width="128.063" height="128.062" style="fill:rgb(0,157,219);"/>
+            </g>
+            <g transform="matrix(-1,0,0,1,1642.38,-134.466)">
+                <rect x="757.157" y="686.202" width="128.063" height="128.062" style="fill:rgb(0,157,219);"/>
+            </g>
+            <g transform="matrix(1,0,0,1,483.303,464.836)">
+                <path d="M0,671.414C-471.653,671.414 -416.769,256.125 -416.769,256.125L370.657,256.125C503.452,256.125 547.359,214.048 547.359,214.048C547.359,214.048 472.351,117.086 560.165,0C658.956,56.714 655.298,140.869 655.298,140.869C655.298,140.869 755.918,107.939 818.12,164.652C783.36,278.079 629.685,270.761 629.685,270.761C629.685,270.761 486.986,671.414 0,671.414" style="fill:rgb(0,157,219);fill-rule:nonzero;"/>
+            </g>
+        </g>
+    </g>
+</svg>

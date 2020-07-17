@@ -6,7 +6,7 @@
     animation-fill-mode: forwards;
     padding: 20px;
     line-height: 1.5em;
-    height: 50vh;
+    height: 25vh;
     padding-top: 100px;
 }
 
@@ -33,7 +33,9 @@
 }
 
 .section {
-    height: 50vh;
+    display: block;
+    text-align: center;
+    margin-bottom: 80px;
 }
 
 @keyframes wave {

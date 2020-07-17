@@ -31,12 +31,17 @@ export const HamburgerMenu = ({ status, children, setStatus }: PropsWithChildren
 
 function handleWindowResize(setStatus: (status: "open" | "closed") => unknown) {
     useEffect(() => {
+        var resizeTimer: NodeJS.Timeout;
         function handleResize() {
-            if (window.innerWidth > 600) {
-                setStatus("closed");
-                window.removeEventListener('resize', handleResize);
-            }
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                if (window.innerWidth > 600) {
+                    setStatus("closed");
+                    window.removeEventListener('resize', handleResize);
+                }
+            }, 250);
         }
+
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, [])

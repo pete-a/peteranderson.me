@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+    width: calc(150px * 3);
+}
+
+.logoContainer {
+    width: 128px;
+    height: 128px;
+    /* background-color: #efefef;
+    border: solid 1px #ccc; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 10px;
+    border-radius: 4px;
+}
