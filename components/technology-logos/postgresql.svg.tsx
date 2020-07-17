@@ -2,11 +2,7 @@ import * as React from "react";
 
 function SvgPostgresql(props) {
   return (
-    <svg
-      height={64}
-      viewBox="0 0 432.071 445.383"
-      {...props}
-    >
+    <svg height={64} viewBox="0 0 432.071 445.383" {...props}>
       <g
         fill="none"
         stroke="#fff"
@@ -55,4 +51,3 @@ function SvgPostgresql(props) {
 }
 
 export default SvgPostgresql;
-

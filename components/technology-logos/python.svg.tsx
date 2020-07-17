@@ -38,4 +38,3 @@ function SvgPython(props) {
 }
 
 export default SvgPython;
-

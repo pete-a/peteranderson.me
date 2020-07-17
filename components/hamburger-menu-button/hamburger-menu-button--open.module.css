@@ -1,18 +1,17 @@
-
 .topBottomBar {
-    opacity: 0;
-    transition: opacity 500ms;
+  opacity: 0;
+  transition: opacity 500ms;
 }
 
 .middleOneBar {
-    transform: rotate(45deg);
-    transform-origin: center;
-    transition: all 500ms 100ms;
+  transform: rotate(45deg);
+  transform-origin: center;
+  transition: all 500ms 100ms;
 }
 
 .middleTwoBar {
-    opacity: 1;
-    transform: rotate(-45deg);
-    transform-origin: center;
-    transition: all 500ms 100ms;
+  opacity: 1;
+  transform: rotate(-45deg);
+  transform-origin: center;
+  transition: all 500ms 100ms;
 }

@@ -13,4 +13,3 @@ function SvgRedux(props) {
 }
 
 export default SvgRedux;
-

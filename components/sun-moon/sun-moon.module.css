@@ -1,9 +1,9 @@
 .show {
-    opacity: 1;
-    transition: opacity 500ms 50ms;
+  opacity: 1;
+  transition: opacity 500ms 50ms;
 }
 
 .hide {
-    opacity: 0;
-    transition: opacity 500ms 50ms;
+  opacity: 0;
+  transition: opacity 500ms 50ms;
 }

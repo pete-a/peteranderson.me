@@ -9,78 +9,126 @@ import { HamburgerMenu } from "../hamburger-menu/hamburger-menu";
 import { ThemedHamburgerMenuButton } from "../hamburger-menu-button/hamburger-menu-button";
 import { Theme, lightTheme, darkTheme } from "../theme";
 
-
 interface IProps {
-    theme: Theme;
-    setTheme: (theme: Theme) => any;
+  theme: Theme;
+  setTheme: (theme: Theme) => any;
 }
 
 export function Header({ theme, setTheme }: IProps) {
-    const [hamburgerMenuStatus, setHamburgerMenuStatus] = useState<"open"|"closed">("closed");
-    const themeStyles = theme.name === "dark" ? darkStyles : lightStyles;
+  const [hamburgerMenuStatus, setHamburgerMenuStatus] = useState<
+    "open" | "closed"
+  >("closed");
+  const themeStyles = theme.name === "dark" ? darkStyles : lightStyles;
 
-    function toggleHamburgerMenuStatus() {
-        setHamburgerMenuStatus(hamburgerMenuStatus === "open" ? "closed" : "open")
+  function toggleHamburgerMenuStatus() {
+    setHamburgerMenuStatus(hamburgerMenuStatus === "open" ? "closed" : "open");
+  }
+
+  function onLinkClick() {
+    if (hamburgerMenuStatus === "open") {
+      setHamburgerMenuStatus("closed");
     }
+  }
 
-    function onLinkClick() {
-        if (hamburgerMenuStatus === "open") {
-            setHamburgerMenuStatus("closed");
-        }
-    }
-
-    return (
-        <>
-            <div className={joinStyles(styles.container, themeStyles.container)}>
-                <div className={joinStyles(styles.title, themeStyles.title)}>
-                    <a href="/"><span className={themeStyles.peteranderson}>peteranderson</span><span className={themeStyles.me}>.me</span></a>
-                </div>
-                <div className={styles.desktopLinks}>
-                    <a className={joinStyles(styles.navLink, themeStyles.navLink)} href="#technology">
-                        Technology
-                    </a>
-                    <a className={joinStyles(styles.navLink, themeStyles.navLink)} href="#experience">
-                        Experience
-                    </a>
-                    <a className={joinStyles(styles.navLink, themeStyles.navLink)} href="#contact">
-                        Contact
-                    </a>
-                    <div className={styles.spacer} />
-                    <div>
-                        <ThemedToggleSwitch checked={theme.name === "dark"} onToggle={() => setTheme(theme.name === "dark" ? lightTheme : darkTheme)} />
-                    </div>
-                    <div className={styles.sunMoonContainer}>
-                        <SunMoon mode={theme.name === "light" ? "sun" : "moon"} />
-                    </div>
-                </div>
-                <div className={styles.hamburgerButtonContainer}>
-                    <div className={styles.spacer} />
-                    <ThemedHamburgerMenuButton menuStatus={hamburgerMenuStatus} onClick={toggleHamburgerMenuStatus} />
-                </div>
-            </div>
+  return (
+    <>
+      <div className={joinStyles(styles.container, themeStyles.container)}>
+        <div className={joinStyles(styles.title, themeStyles.title)}>
+          <a href="/">
+            <span className={themeStyles.peteranderson}>peteranderson</span>
+            <span className={themeStyles.me}>.me</span>
+          </a>
+        </div>
+        <div className={styles.desktopLinks}>
+          <a
+            className={joinStyles(styles.navLink, themeStyles.navLink)}
+            href="#technology"
+          >
+            Technology
+          </a>
+          <a
+            className={joinStyles(styles.navLink, themeStyles.navLink)}
+            href="#experience"
+          >
+            Experience
+          </a>
+          <a
+            className={joinStyles(styles.navLink, themeStyles.navLink)}
+            href="#contact"
+          >
+            Contact
+          </a>
+          <div className={styles.spacer} />
+          <div>
+            <ThemedToggleSwitch
+              checked={theme.name === "dark"}
+              onToggle={() =>
+                setTheme(theme.name === "dark" ? lightTheme : darkTheme)
+              }
+            />
+          </div>
+          <div className={styles.sunMoonContainer}>
+            <SunMoon mode={theme.name === "light" ? "sun" : "moon"} />
+          </div>
+        </div>
+        <div className={styles.hamburgerButtonContainer}>
+          <div className={styles.spacer} />
+          <ThemedHamburgerMenuButton
+            menuStatus={hamburgerMenuStatus}
+            onClick={toggleHamburgerMenuStatus}
+          />
+        </div>
+      </div>
+      <div>
+        <HamburgerMenu
+          status={hamburgerMenuStatus}
+          setStatus={setHamburgerMenuStatus}
+        >
+          <a
+            onClick={onLinkClick}
+            className={joinStyles(styles.navLink, themeStyles.navLink)}
+            href="#technology"
+          >
+            Technology
+          </a>
+          <a
+            onClick={onLinkClick}
+            className={joinStyles(styles.navLink, themeStyles.navLink)}
+            href="#experience"
+          >
+            Experience
+          </a>
+          <a
+            onClick={onLinkClick}
+            className={joinStyles(styles.navLink, themeStyles.navLink)}
+            href="#blog"
+          >
+            Blog
+          </a>
+          <div className={styles.spacer} />
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "row",
+              padding: "20px",
+              background: "rgba(0,0,0,0.02)",
+            }}
+          >
             <div>
-                <HamburgerMenu status={hamburgerMenuStatus} setStatus={setHamburgerMenuStatus}>
-                    <a onClick={onLinkClick} className={joinStyles(styles.navLink, themeStyles.navLink)} href="#technology">
-                        Technology
-                    </a>
-                    <a onClick={onLinkClick} className={joinStyles(styles.navLink, themeStyles.navLink)} href="#experience">
-                        Experience
-                    </a>
-                    <a onClick={onLinkClick} className={joinStyles(styles.navLink, themeStyles.navLink)} href="#blog">
-                        Blog
-                    </a>
-                    <div className={styles.spacer} />
-                    <div style={{width: "100%", display: "flex", flexDirection: "row", padding: "20px", background: "rgba(0,0,0,0.02)"}}>
-                        <div>
-                            <ThemedToggleSwitch checked={theme.name === "dark"} onToggle={() => setTheme(theme.name === "dark" ? lightTheme : darkTheme)} />)
-                        </div>
-                        <div className={styles.sunMoonContainer} >
-                            <SunMoon mode={theme.name === "light" ? "sun" : "moon"} />
-                        </div>
-                    </div>
-                </HamburgerMenu>
+              <ThemedToggleSwitch
+                checked={theme.name === "dark"}
+                onToggle={() =>
+                  setTheme(theme.name === "dark" ? lightTheme : darkTheme)
+                }
+              />
             </div>
-        </>
-    );
+            <div className={styles.sunMoonContainer}>
+              <SunMoon mode={theme.name === "light" ? "sun" : "moon"} />
+            </div>
+          </div>
+        </HamburgerMenu>
+      </div>
+    </>
+  );
 }
-

@@ -10,28 +10,46 @@ import { joinStyles } from "../../utils/styles";
 import { lightTheme, Theme } from "../theme";
 
 interface Props {
-    theme: Theme;
-    menuStatus: "open" | "closed";
-    onClick: () => unknown;
+  theme: Theme;
+  menuStatus: "open" | "closed";
+  onClick: () => unknown;
 }
 
 export function HamburgerMenuButton(props: Props) {
-    const statusStyles = props.menuStatus === "open" ? openStyles : closedStyles;
-    const themeStyles = props.theme.name === "dark" ? darkStyles : lightStyles;
+  const statusStyles = props.menuStatus === "open" ? openStyles : closedStyles;
+  const themeStyles = props.theme.name === "dark" ? darkStyles : lightStyles;
 
-    return (
-        <div className={joinStyles(styles.container, props.menuStatus === "open" ? themeStyles.openContainer : styles.closedContainer)} onClick={props.onClick}>
-            <SvgHamburger width="20px" color={props.theme.name === "dark" ? "#fff" : "#001F33"} topBottomBarsStyle={statusStyles.topBottomBar} middleOneStyle={statusStyles.middleOneBar} middleTwoStyle={statusStyles.middleTwoBar} />
-        </div>
-    );
+  return (
+    <div
+      className={joinStyles(
+        styles.container,
+        props.menuStatus === "open"
+          ? themeStyles.openContainer
+          : styles.closedContainer
+      )}
+      onClick={props.onClick}
+    >
+      <SvgHamburger
+        width="20px"
+        color={props.theme.name === "dark" ? "#fff" : "#001F33"}
+        topBottomBarsStyle={statusStyles.topBottomBar}
+        middleOneStyle={statusStyles.middleOneBar}
+        middleTwoStyle={statusStyles.middleTwoBar}
+      />
+    </div>
+  );
 }
 
 export function ThemedHamburgerMenuButton(props: Omit<Props, "theme">) {
-    return (
-        <ThemeContext.Consumer>
-            { theme => (
-                <HamburgerMenuButton theme={theme || lightTheme} {...props} onClick={props.onClick} />
-            )}
-        </ThemeContext.Consumer>
-    );
+  return (
+    <ThemeContext.Consumer>
+      {(theme) => (
+        <HamburgerMenuButton
+          theme={theme || lightTheme}
+          {...props}
+          onClick={props.onClick}
+        />
+      )}
+    </ThemeContext.Consumer>
+  );
 }

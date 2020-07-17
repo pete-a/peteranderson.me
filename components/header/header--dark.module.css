@@ -1,23 +1,24 @@
 .container {
-    color: white;
+  color: white;
 }
 
 .title {
-    color: white;
+  color: white;
 }
 
 .me {
-    color: rgb(209, 209, 230);
+  color: rgb(209, 209, 230);
 }
 
 .peteranderson {
-    color: #fafafa;
+  color: #fafafa;
 }
 
 .navLink:active {
-    outline: dashed 1px #aab;
+  outline: dashed 1px #aab;
 }
 
-.navLink, .navLink:visited {
-    color: #fff;
+.navLink,
+.navLink:visited {
+  color: #fff;
 }

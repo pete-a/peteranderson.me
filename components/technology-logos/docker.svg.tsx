@@ -26,4 +26,3 @@ function SvgDocker(props) {
 }
 
 export default SvgDocker;
-

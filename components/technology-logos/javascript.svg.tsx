@@ -10,4 +10,3 @@ function SvgJavascript(props) {
 }
 
 export default SvgJavascript;
-

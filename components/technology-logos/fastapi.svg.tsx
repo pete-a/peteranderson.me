@@ -24,4 +24,3 @@ function SvgFastapi(props) {
 }
 
 export default SvgFastapi;
-

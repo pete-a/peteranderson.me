@@ -1,11 +1,11 @@
 export type Theme = {
-    name: "light" | "dark"
-}
+  name: "light" | "dark";
+};
 
 export const darkTheme: Theme = {
-    name: "dark"
-}
+  name: "dark",
+};
 
 export const lightTheme: Theme = {
-    name: "light"
-}
+  name: "light",
+};

@@ -2,7 +2,7 @@ import * as React from "react";
 import { Theme } from "../theme";
 
 interface Props {
-  theme: Theme
+  theme: Theme;
 }
 
 function SvgNextjs({ theme }: Props) {
@@ -27,4 +27,3 @@ function SvgNextjs({ theme }: Props) {
 }
 
 export default SvgNextjs;
-

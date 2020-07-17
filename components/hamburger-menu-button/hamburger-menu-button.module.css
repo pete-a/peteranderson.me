@@ -1,12 +1,12 @@
 .container {
-    --size: 29px;
-    padding: var(--size);
-    margin: calc(var(--size) * -1);
-    margin-right: -20px;
-    margin-left: -20px;
-    transition: background-color 250ms;
+  --size: 29px;
+  padding: var(--size);
+  margin: calc(var(--size) * -1);
+  margin-right: -20px;
+  margin-left: -20px;
+  transition: background-color 250ms;
 }
 
 .closedContainer {
-    transition: background-color 250ms 250ms;
+  transition: background-color 250ms 250ms;
 }

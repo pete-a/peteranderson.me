@@ -6,43 +6,47 @@ import { ThemeContext } from "../theme-context";
 import { joinStyles } from "../../utils/styles";
 
 interface IProps {
-    status: "open" | "closed";
-    setStatus: (status: "open" | "closed") => unknown;
+  status: "open" | "closed";
+  setStatus: (status: "open" | "closed") => unknown;
 }
 
-export const HamburgerMenu = ({ status, children, setStatus }: PropsWithChildren<IProps>) => {
-    if (typeof window !== "undefined" && status === "open") {
-        handleWindowResize(setStatus)
-    }
-    return (
-        <ThemeContext.Consumer>
-            {theme => {
-                const statusStyle = status === "open" ? styles.open : styles.closed;
-                const themeStyles = theme.name === "dark" ? darkStyles : lightStyles;
-                return (
-                    <div className={joinStyles(statusStyle, themeStyles.container)}>
-                        {children}
-                    </div>
-                );
-            }}
-        </ThemeContext.Consumer>
-    )
+export const HamburgerMenu = ({
+  status,
+  children,
+  setStatus,
+}: PropsWithChildren<IProps>) => {
+  if (typeof window !== "undefined" && status === "open") {
+    handleWindowResize(setStatus);
+  }
+  return (
+    <ThemeContext.Consumer>
+      {(theme) => {
+        const statusStyle = status === "open" ? styles.open : styles.closed;
+        const themeStyles = theme.name === "dark" ? darkStyles : lightStyles;
+        return (
+          <div className={joinStyles(statusStyle, themeStyles.container)}>
+            {children}
+          </div>
+        );
+      }}
+    </ThemeContext.Consumer>
+  );
 };
 
 function handleWindowResize(setStatus: (status: "open" | "closed") => unknown) {
-    useEffect(() => {
-        var resizeTimer: NodeJS.Timeout;
-        function handleResize() {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(() => {
-                if (window.innerWidth > 600) {
-                    setStatus("closed");
-                    window.removeEventListener('resize', handleResize);
-                }
-            }, 250);
+  useEffect(() => {
+    var resizeTimer: NodeJS.Timeout;
+    function handleResize() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (window.innerWidth > 600) {
+          setStatus("closed");
+          window.removeEventListener("resize", handleResize);
         }
+      }, 250);
+    }
 
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, [])
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 }

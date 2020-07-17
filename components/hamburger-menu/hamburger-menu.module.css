@@ -1,23 +1,23 @@
-
-.open, .closed {
-    margin: 0;
-    overflow: hidden;
-    z-index: 2;
-    left: 0;
-    right: 0;
-    position: absolute;
+.open,
+.closed {
+  margin: 0;
+  overflow: hidden;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  position: absolute;
 }
 
 .open a {
-    display: block;
+  display: block;
 }
 
 .closed {
-    max-height: 0px;
-    transition: all 500ms;
+  max-height: 0px;
+  transition: all 500ms;
 }
 
 .open {
-    max-height: 260px;
-    transition: all 500ms;
+  max-height: 260px;
+  transition: all 500ms;
 }

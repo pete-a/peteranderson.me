@@ -1,46 +1,46 @@
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 16px;
-    transition: background-color 250ms, color 500ms;
-    height: 100%;
-    padding: 0;
-    margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  transition: background-color 250ms, color 500ms;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .content {
-    max-width: 1200px;
-    padding: 0 20px;
-    margin: auto;
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: auto;
 }
 
 h1 {
-    font-size: 2.5em;
+  font-size: 2.5em;
 }
 
-
 body.dark-theme {
-    background-color: #001E33;
-    color: #FAFDFF;
+  background-color: #001e33;
+  color: #fafdff;
 }
 
 body.light-theme {
-    background-color: #FAFDFF;
-    color: #001E33;
+  background-color: #fafdff;
+  color: #001e33;
 }
 
 @media (prefers-color-scheme: dark) {
-    body {
-        background-color: #001E33;
-        color: #FAFDFF;
-    }
+  body {
+    background-color: #001e33;
+    color: #fafdff;
+  }
 }
-  
+
 @media (prefers-color-scheme: light) {
-    body {
-        background-color: #FAFDFF;
-        color: #001E33;
-    }
+  body {
+    background-color: #fafdff;
+    color: #001e33;
+  }
 }

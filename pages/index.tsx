@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./index.module.css"
+import styles from "./index.module.css";
 import { ThemeContext } from "../components/theme-context";
 import SvgReact from "../components/technology-logos/react.svg";
 import SvgRedux from "../components/technology-logos/redux.svg";
@@ -17,32 +17,40 @@ import { TechnologyGrid } from "../components/technology-grid/technology-grid";
 import { lightTheme } from "../components/theme";
 
 function Index() {
-    return (
-        <ThemeContext.Consumer>
-            {theme => (
-                <>
-                    <div className={styles.intro}>
-                        <h1>Hi there <span className={`${styles.hand} ${styles.handStart}`}>👋</span></h1>
-                        <div className={styles.summary}>
-                            I am a full stack freelance web developer with over 12 years commerical experience.
-                    </div>
-                    </div>
+  return (
+    <ThemeContext.Consumer>
+      {(theme) => (
+        <>
+          <div className={styles.intro}>
+            <div className={styles.introContent}>
+              <h1>
+                Hi there{" "}
+                <span className={`${styles.hand} ${styles.handStart}`}>👋</span>
+              </h1>
+              <div className={styles.summary}>
+                I am a full stack freelance web developer with over 12 years
+                commerical experience.
+              </div>
+            </div>
+          </div>
 
-                    <div id="technology" className={styles.section}>
-                        <h2 className="bg-huge">Technology</h2>
-                        <p>I primarily work with these languages, frameworks and platforms:</p>
-                        <TechnologyGrid theme={theme || lightTheme} />
-                    </div>
-                    <div id="experience" className={styles.section}>
-                        <h2>Experience</h2>
-                    </div>
-                    <div id="blog" className={styles.section}>
-                        <h2>Blog</h2>
-                    </div>
-                </>
-            )}
-        </ThemeContext.Consumer>
-    )
+          <div id="technology" className={styles.section}>
+            <h2 className="bg-huge">Technology</h2>
+            <p>
+              I primarily work with these languages, frameworks and platforms:
+            </p>
+            <TechnologyGrid theme={theme} />
+          </div>
+          <div id="experience" className={styles.section}>
+            <h2>Experience</h2>
+          </div>
+          <div id="blog" className={styles.section}>
+            <h2>Blog</h2>
+          </div>
+        </>
+      )}
+    </ThemeContext.Consumer>
+  );
 }
 
 export default Index;

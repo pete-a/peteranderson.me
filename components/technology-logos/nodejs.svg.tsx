@@ -2,11 +2,7 @@ import * as React from "react";
 
 function SvgNodejs(props) {
   return (
-    <svg
-      height={64}
-      viewBox="170 161 98 110"
-      {...props}
-    >
+    <svg height={64} viewBox="170 161 98 110" {...props}>
       <defs>
         <linearGradient
           id="nodejs_svg__b"
@@ -66,4 +62,3 @@ function SvgNodejs(props) {
 }
 
 export default SvgNodejs;
-

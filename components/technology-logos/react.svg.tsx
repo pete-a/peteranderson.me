@@ -14,4 +14,3 @@ function SvgReact(props) {
 }
 
 export default SvgReact;
-

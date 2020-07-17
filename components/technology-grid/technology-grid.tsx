@@ -14,30 +14,29 @@ import SvgDocker from "../technology-logos/docker.svg";
 import { Theme } from "../theme";
 import SvgFastapi from "../technology-logos/fastapi.svg";
 
-
 const logos = [
-    SvgTypescript,
-    SvgJavascript,
-    SvgPython,
-    SvgReact,
-    SvgRedux,
-    SvgNextjs,
-    SvgNodejs,
-    SvgGraphql,
-    SvgFastapi,
-    SvgAws,
-    SvgDocker,
-    SvgPostgresql
-]
+  SvgTypescript,
+  SvgJavascript,
+  SvgPython,
+  SvgReact,
+  SvgRedux,
+  SvgNextjs,
+  SvgNodejs,
+  SvgGraphql,
+  SvgFastapi,
+  SvgAws,
+  SvgDocker,
+  SvgPostgresql,
+];
 
 export const TechnologyGrid = ({ theme }: { theme: Theme }) => (
-    <div className={styles.container}>
-        <div className={styles.content}>
-            {logos.map((logo, i) => (
-                <div key={`logo-${i}`} className={styles.logoContainer}>
-                    {React.createElement(logo, { theme })}
-                </div>
-            ))}
+  <div className={styles.container}>
+    <div className={styles.content}>
+      {logos.map((logo, i) => (
+        <div key={`logo-${i}`} className={styles.logoContainer}>
+          {React.createElement(logo, { theme })}
         </div>
+      ))}
     </div>
+  </div>
 );

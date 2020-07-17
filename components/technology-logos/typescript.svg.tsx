@@ -13,4 +13,3 @@ function SvgTypescript(props) {
 }
 
 export default SvgTypescript;
-

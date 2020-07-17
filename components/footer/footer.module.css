@@ -1,16 +1,17 @@
 .container {
-    text-align: center;
-    margin: 4em 0;
+  text-align: center;
+  margin: 4em 0;
 }
 
-.container a, .container a:visited {
-    text-decoration: none;
-    color: inherit;
+.container a,
+.container a:visited {
+  text-decoration: none;
+  color: inherit;
 }
 
 .peteranderson {
-    font-weight: bold;
+  font-weight: bold;
 }
 .me {
-    font-weight: bold;
+  font-weight: bold;
 }

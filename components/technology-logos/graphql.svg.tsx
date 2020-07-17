@@ -17,4 +17,3 @@ function SvgGraphql(props) {
 }
 
 export default SvgGraphql;
-

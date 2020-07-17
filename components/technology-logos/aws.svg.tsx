@@ -2,12 +2,11 @@ import * as React from "react";
 import { Theme } from "../theme";
 
 interface Props {
-  theme: Theme
+  theme: Theme;
 }
 
 function SvgAws({ theme }: Props) {
-
-  const color = theme.name === "dark" ? "#fafafa"  : "#252f3e";
+  const color = theme.name === "dark" ? "#fafafa" : "#252f3e";
 
   return (
     <svg
@@ -39,4 +38,3 @@ function SvgAws({ theme }: Props) {
 }
 
 export default SvgAws;
-
