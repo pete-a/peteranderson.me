@@ -22,4 +22,31 @@
   box-sizing: border-box;
   margin: 10px;
   border-radius: 4px;
+
+  background-color: rgba(0,0,0,0.05);
+  transition: filter 500ms;
 }
+
+@media (max-width: 504px) {
+  .content {
+    width: calc(150px * 2);
+  }
+}
+
+@media (max-width: 360px) {
+  .content {
+    width: 100%;
+  }
+  .logoContainer {
+    width: 100%;
+  }
+}
+
+
+
+.logoContainer:hover {
+  filter: none;
+  border: solid 1px white;
+  cursor: pointer;
+}
+
