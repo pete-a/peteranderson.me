@@ -28,6 +28,8 @@ export function HamburgerMenuButton(props: Props) {
           : styles.closedContainer
       )}
       onClick={props.onClick}
+      role="button"
+      aria-label={props.menuStatus === "closed" ? "Open menu" : "Close menu"}
     >
       <SvgHamburger
         width="20px"

@@ -24,6 +24,25 @@ export default function MyApp({ Component, pageProps }) {
           content="I am a full stack freelance web developer with over 12 years commerical experience"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+        @media (prefers-color-scheme: dark) {
+          body {
+            background-color: #001e33;
+            color: #fafdff;
+          }
+        }
+        
+        @media (prefers-color-scheme: light) {
+          body {
+            background-color: #fafdff;
+            color: #001e33;
+          }
+        }
+        `,
+          }}
+        />
       </Head>
       <div className="content">
         <ThemeContext.Provider value={theme}>
