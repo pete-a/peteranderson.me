@@ -20,8 +20,7 @@
 .summary {
   margin-top: 3em;
   opacity: 0;
-  animation: fade-in 500ms;
-  animation-delay: 1.7s;
+  animation: fade-in 1.5s 2s;
   animation-fill-mode: forwards;
 }
 
@@ -42,7 +41,7 @@
 .section {
   display: block;
   text-align: center;
-  padding-top: 10px;
+  padding-top: 90px;
   min-height: 100vh;
 }
 

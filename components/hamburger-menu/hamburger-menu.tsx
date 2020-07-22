@@ -4,6 +4,7 @@ import lightStyles from "./hamburger-menu--light.module.css";
 import darkStyles from "./hamburger-menu--dark.module.css";
 import { ThemeContext } from "../theme-context";
 import { joinStyles } from "../../utils/styles";
+import { loadGetInitialProps } from "next/dist/next-server/lib/utils";
 
 interface IProps {
   status: "open" | "closed";
@@ -18,15 +19,26 @@ export const HamburgerMenu = ({
   if (typeof window !== "undefined" && status === "open") {
     handleWindowResize(setStatus);
   }
+
+  function onClickOutside(e: React.MouseEvent) {
+    e.preventDefault();
+    setStatus("closed");
+  }
+
   return (
     <ThemeContext.Consumer>
       {(theme) => {
         const statusStyle = status === "open" ? styles.open : styles.closed;
         const themeStyles = theme.name === "dark" ? darkStyles : lightStyles;
         return (
-          <div className={joinStyles(statusStyle, themeStyles.container)}>
-            {children}
-          </div>
+          <>
+            <div className={joinStyles(statusStyle, themeStyles.container)}>
+              {children}
+            </div>
+            {status === "open" && (
+              <div className={styles.overlay} onClick={onClickOutside} />
+            )}
+          </>
         );
       }}
     </ThemeContext.Consumer>

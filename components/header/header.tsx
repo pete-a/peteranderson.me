@@ -31,7 +31,9 @@ export function Header({ theme, setTheme }: IProps) {
   }
 
   return (
-    <>
+    <div
+      className={joinStyles(styles.fixedContainer, themeStyles.fixedContainer)}
+    >
       <div className={joinStyles(styles.container, themeStyles.container)}>
         <div className={joinStyles(styles.title, themeStyles.title)}>
           <a href="/">
@@ -129,6 +131,6 @@ export function Header({ theme, setTheme }: IProps) {
           </div>
         </HamburgerMenu>
       </div>
-    </>
+    </div>
   );
 }

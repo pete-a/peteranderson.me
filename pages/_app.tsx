@@ -18,6 +18,11 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <title>Peter Anderson | Freelance web developer and consultant</title>
+        <meta
+          name="description"
+          content="I am a full stack freelance web developer with over 12 years commerical experience"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className="content">

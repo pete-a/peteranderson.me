@@ -1,12 +1,31 @@
+.fixedContainer {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 0;
+  backdrop-filter: blur(15px);
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
 .container {
-  opacity: 0;
-  animation: fade-in 2s 1s;
+  width: 1200px;
+  /* opacity: 0; */
+  /* animation: fade-in 3s 1s; */
   animation-fill-mode: forwards;
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: auto;
   min-height: 80px;
+  padding: 0 20px;
+}
+
+@media (max-width: 1199px) {
+  .container {
+    width: 100%;
+  }
 }
 
 @keyframes fade-in {
