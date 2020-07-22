@@ -8,6 +8,8 @@ import { SunMoon } from "../sun-moon/sun-moon";
 import { HamburgerMenu } from "../hamburger-menu/hamburger-menu";
 import { ThemedHamburgerMenuButton } from "../hamburger-menu-button/hamburger-menu-button";
 import { Theme, lightTheme, darkTheme } from "../theme";
+import { ThemedSvgGitHub } from "../icons/github";
+import { ThemedSvgLinkedIn } from "../icons/linkedin";
 
 interface IProps {
   theme: Theme;
@@ -56,11 +58,19 @@ export function Header({ theme, setTheme }: IProps) {
           </a>
           <a
             className={joinStyles(styles.navLink, themeStyles.navLink)}
-            href="#contact"
+            href="#contact-me"
           >
-            Contact
+            Contact me
           </a>
           <div className={styles.spacer} />
+          <div className={styles.socialLinksContainer}>
+            <a href="https://www.linkedin.com/in/peter-anderson-30702b32/">
+              <ThemedSvgLinkedIn height={22} />
+            </a>
+            <a href="https://github.com/pete-a">
+              <ThemedSvgGitHub height={22} />
+            </a>
+          </div>
           <div>
             <ThemedToggleSwitch
               checked={theme.name === "dark"}

@@ -22,6 +22,14 @@
   padding: 0 20px;
 }
 
+.socialLinksContainer {
+  margin-right: 20px;
+}
+
+.socialLinksContainer > :first-child {
+  margin-right: 10px;
+}
+
 @media (max-width: 1199px) {
   .container {
     width: 100%;

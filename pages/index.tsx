@@ -53,6 +53,14 @@ function Index() {
             </p>
             <CompanyLogoRotator theme={theme} />
           </div>
+          <div id="contact-me" className={styles.section}>
+            <h2>Contact me</h2>
+            <p>
+              You can view my GitHub profile, connect with me on LinkedIn, or
+              feel free to send me a message via the form below.
+            </p>
+            <div></div>
+          </div>
         </>
       )}
     </ThemeContext.Consumer>
