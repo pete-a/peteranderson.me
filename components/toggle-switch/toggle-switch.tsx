@@ -16,7 +16,9 @@ export const ToggleSwitch = (props: {
     <button
       className={`${themeStyles.container} ${sharedStyles.container}`}
       onClick={props.onToggle}
-      aria-label={props.checked === true ? "Toggle dark mode" : "Toggle light mode"}
+      aria-label={
+        props.checked === true ? "Toggle dark mode" : "Toggle light mode"
+      }
     >
       <div
         className={`${sharedStyles.toggle} ${themeStyles.toggleTheme} ${checkedStyle}`}

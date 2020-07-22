@@ -15,6 +15,10 @@ import SvgGraphql from "../components/technology-logos/graphql.svg";
 import SvgJavascript from "../components/technology-logos/javascript.svg";
 import { TechnologyGrid } from "../components/technology-grid/technology-grid";
 import { lightTheme } from "../components/theme";
+import SvgTelstra from "../components/company-logos/telstra";
+import SvgQantas from "../components/company-logos/qantas";
+import SvgWestfield from "../components/company-logos/westfield";
+import { CompanyLogoRotator } from "../components/company-logo-rotator/company-logo-rotator";
 
 function Index() {
   return (
@@ -43,9 +47,11 @@ function Index() {
           </div>
           <div id="experience" className={styles.section}>
             <h2>Experience</h2>
-          </div>
-          <div id="blog" className={styles.section}>
-            <h2>Blog</h2>
+            <p>
+              These are a few of the great companies I've been fortunate to work
+              for and freelance with:
+            </p>
+            <CompanyLogoRotator theme={theme} />
           </div>
         </>
       )}
