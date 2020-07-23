@@ -1,3 +1,8 @@
+html,
+body {
+  height: 100%;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -10,10 +15,9 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  padding-top: 80px;
 }
 
-.content {
+:global(.content) {
   max-width: 1200px;
   padding: 0 20px;
   margin: 0 auto;
@@ -23,25 +27,40 @@ h1 {
   font-size: 2.5em;
 }
 
-body.dark-theme {
+:global(.dark-theme) {
   background-color: #001e33;
+  color: rgb(209, 209, 230);
+  height: 100%;
+}
+:global(.dark-theme h1),
+:global(.dark-theme h2) {
   color: #fafdff;
 }
 
-body.light-theme {
+:global(.light-theme) {
   background-color: #fafdff;
+  color: #778;
+  height: 100%;
+}
+
+:global(.light-theme h1),
+:global(.light-theme h2) {
   color: #001e33;
 }
 
+:global(.unset-theme) {
+  height: 100%;
+}
+
 @media (prefers-color-scheme: dark) {
-  body {
+  :global(.unset-theme) {
     background-color: #001e33;
     color: #fafdff;
   }
 }
 
 @media (prefers-color-scheme: light) {
-  body {
+  :global(.unset-theme) {
     background-color: #fafdff;
     color: #001e33;
   }
