@@ -23,6 +23,8 @@ export default function MyApp({ Component, pageProps }) {
           name="description"
           content="I am a full stack freelance web developer with over 12 years commerical experience"
         />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
+        <link rel="alternate icon" href="/favicon.png"></link>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style
           dangerouslySetInnerHTML={{
