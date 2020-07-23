@@ -4,7 +4,6 @@ import lightStyles from "./hamburger-menu--light.module.css";
 import darkStyles from "./hamburger-menu--dark.module.css";
 import { ThemeContext } from "../theme-context";
 import { joinStyles } from "../../utils/styles";
-import { loadGetInitialProps } from "next/dist/next-server/lib/utils";
 
 interface IProps {
   status: "open" | "closed";

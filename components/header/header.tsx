@@ -113,9 +113,23 @@ export function Header({ theme, setTheme }: IProps) {
           <a
             onClick={onLinkClick}
             className={joinStyles(styles.navLink, themeStyles.navLink)}
-            href="#blog"
+            href="#contact-me"
           >
-            Blog
+            Contact me
+          </a>
+          <a
+            className={joinStyles(styles.navLink, themeStyles.navLink)}
+            href="https://www.linkedin.com/in/peter-anderson-30702b32/"
+          >
+            LinkedIn &nbsp;
+            <ThemedSvgLinkedIn height={12} />
+          </a>
+          <a
+            onClick={onLinkClick}
+            className={joinStyles(styles.navLink, themeStyles.navLink)}
+            href="https://github.com/pete-a"
+          >
+            GitHub &nbsp; <ThemedSvgGitHub height={12} />
           </a>
           <div className={styles.spacer} />
           <div
