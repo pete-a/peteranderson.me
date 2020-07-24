@@ -1,0 +1,6 @@
+@use "../../styling/colors--dark.scss" as colors;
+
+.container {
+  background-color: colors.$backgroundColor;
+  color: colors.$primaryTextColor;
+}

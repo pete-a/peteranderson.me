@@ -1,0 +1,5 @@
+@use "../../styling/colors--dark.scss" as colors;
+
+.openContainer {
+  background-color: lighten(colors.$backgroundColor, 5%)
+}

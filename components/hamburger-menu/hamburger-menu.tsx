@@ -1,7 +1,7 @@
 import React, { PropsWithChildren, useState, useEffect } from "react";
-import styles from "./hamburger-menu.module.css";
-import lightStyles from "./hamburger-menu--light.module.css";
-import darkStyles from "./hamburger-menu--dark.module.css";
+import styles from "./hamburger-menu.module.scss";
+import lightStyles from "./hamburger-menu--light.module.scss";
+import darkStyles from "./hamburger-menu--dark.module.scss";
 import { ThemeContext } from "../theme-context";
 import { joinStyles } from "../../utils/styles";
 

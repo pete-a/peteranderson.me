@@ -1,0 +1,40 @@
+@use "../styling/colors--dark.scss" as dark;
+@use "../styling/colors--light.scss" as light;
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  transition: background-color 250ms, color 500ms;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: light.$backgroundColor;
+    color: light.$primaryTextColor;
+  }
+}
+
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: dark.$backgroundColor;
+    color: dark.$primaryTextColor;
+  }
+}

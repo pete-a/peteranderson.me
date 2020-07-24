@@ -7,7 +7,7 @@ interface CustomProps {
 }
 
 export function SvgGitHub(props: React.SVGProps<SVGSVGElement> & CustomProps) {
-  const color = props.theme.name === "light" ? "#1B1F23" : "#fff";
+  const color = props.theme.name === "light" ? "#444" : "#fff";
   return (
     <svg viewBox="0 0 1024 1024" fill="none" {...props}>
       <path

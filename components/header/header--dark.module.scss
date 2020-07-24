@@ -1,5 +1,8 @@
+@use "../../styling/colors--dark.scss" as colors;
+
 .fixedContainer {
-  background-color: rgba(0, 30, 51, 0.9);
+  background: colors.$backgroundColor;
+  // box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
 }
 .container {
   color: white;

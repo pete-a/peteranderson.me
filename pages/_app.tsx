@@ -1,30 +1,30 @@
-import "./styles.css";
+import "./styles.scss";
 import { ThemeSwitcher } from "../components/theme-switcher";
 import { useEffect, useState } from "react";
 import { ThemeContext } from "../components/theme-context";
 import { Header } from "../components/header/header";
 import Head from "next/head";
 import { Footer } from "../components/footer/footer";
-import { Theme, lightTheme, darkTheme } from "../components/theme";
+import { Theme, lightTheme, darkTheme, autoTheme } from "../components/theme";
 import {
   NextPageContext,
   AppContextType,
 } from "next/dist/next-server/lib/utils";
-import { NextPage } from "next";
+import { AppWrapper } from "../components/app-wrapper/app-wrapper";
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp(props) {
   const { Component, pageProps } = props;
 
-  let initialTheme = lightTheme;
+  let initialTheme: Theme = autoTheme;
   if (props.themeName === "dark") {
     initialTheme = darkTheme;
   }
+  if (props.themeName === "light") {
+    initialTheme = lightTheme;
+  }
 
   const [theme, setTheme] = useState<Theme>(initialTheme);
-
-  const themeClass =
-    props.themeName !== null ? `${theme.name}-theme` : `unset-theme`;
 
   useEffect(() => {
     document.cookie = `theme=${theme.name}`;
@@ -41,17 +41,15 @@ export default function MyApp(props) {
         <link rel="alternate icon" href="/favicon.png"></link>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div className={themeClass}>
-        <div className="content">
-          <ThemeContext.Provider value={theme}>
-            <ThemeSwitcher onSwitch={setTheme}>
-              <Header theme={theme} setTheme={setTheme} />
-              <Component {...pageProps} />
-              <Footer />
-            </ThemeSwitcher>
-          </ThemeContext.Provider>
-        </div>
-      </div>
+      <ThemeContext.Provider value={theme}>
+        <ThemeSwitcher onSwitch={setTheme}>
+          <AppWrapper theme={theme}>
+            <Header theme={theme} setTheme={setTheme} />
+            <Component {...pageProps} />
+            <Footer />
+          </AppWrapper>
+        </ThemeSwitcher>
+      </ThemeContext.Provider>
     </>
   );
 }

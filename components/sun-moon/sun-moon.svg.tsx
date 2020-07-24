@@ -1,5 +1,5 @@
 import * as React from "react";
-import styles from "./sun-moon.module.css";
+import styles from "./sun-moon.module.scss";
 
 export interface IProps {
   mode: "sun" | "moon";

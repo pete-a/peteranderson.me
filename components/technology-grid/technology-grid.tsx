@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./technology-grid.module.css";
+import styles from "./technology-grid.module.scss";
 import SvgTypescript from "../technology-logos/typescript.svg";
 import SvgJavascript from "../technology-logos/javascript.svg";
 import SvgPython from "../technology-logos/python.svg";

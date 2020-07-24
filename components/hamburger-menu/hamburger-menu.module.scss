@@ -13,14 +13,17 @@
   display: block;
 }
 
+$animationSpeed: 300ms;
+
 .closed {
   max-height: 0px;
-  transition: all 500ms;
+  transition: max-height $animationSpeed;
 }
 
 .open {
   max-height: 360px;
-  transition: all 500ms;
+  transition: max-height $animationSpeed;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2);
 }
 
 .overlay {

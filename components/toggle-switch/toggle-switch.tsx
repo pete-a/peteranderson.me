@@ -1,7 +1,7 @@
 import React from "react";
-import darkStyles from "./toggle-switch--dark.module.css";
-import lightStyles from "./toggle-switch--light.module.css";
-import sharedStyles from "./toggle-switch.module.css";
+import darkStyles from "./toggle-switch--dark.module.scss";
+import lightStyles from "./toggle-switch--light.module.scss";
+import sharedStyles from "./toggle-switch.module.scss";
 import { Theme, lightTheme } from "../theme";
 
 export const ToggleSwitch = (props: {

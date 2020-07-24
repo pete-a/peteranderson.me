@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import styles from "./company-logo-rotator.module.css";
+import styles from "./company-logo-rotator.module.scss";
 import SvgTelstra from "../company-logos/telstra";
-import { joinStyles } from "../../utils/styles";
 import { Theme } from "../theme";
 import SvgQantas from "../company-logos/qantas";
 import SvgWestfield from "../company-logos/westfield";

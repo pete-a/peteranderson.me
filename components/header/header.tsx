@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import styles from "./header.module.css";
-import darkStyles from "./header--dark.module.css";
-import lightStyles from "./header--light.module.css";
+import baseStyles from "./header.module.scss";
+import darkStyles from "./header--dark.module.scss";
+import lightStyles from "./header--light.module.scss";
 import { ThemedToggleSwitch } from "../toggle-switch/themed-toggle-switch";
-import { joinStyles } from "../../utils/styles";
+import { createThemedStyles } from "../../utils/styles";
 import { SunMoon } from "../sun-moon/sun-moon";
 import { HamburgerMenu } from "../hamburger-menu/hamburger-menu";
 import { ThemedHamburgerMenuButton } from "../hamburger-menu-button/hamburger-menu-button";
@@ -20,7 +20,12 @@ export function Header({ theme, setTheme }: IProps) {
   const [hamburgerMenuStatus, setHamburgerMenuStatus] = useState<
     "open" | "closed"
   >("closed");
-  const themeStyles = theme.name === "dark" ? darkStyles : lightStyles;
+
+  const styles = createThemedStyles(theme, baseStyles, {
+    lightStyles,
+    darkStyles,
+    autoStyles: {},
+  });
 
   function toggleHamburgerMenuStatus() {
     setHamburgerMenuStatus(hamburgerMenuStatus === "open" ? "closed" : "open");
@@ -33,41 +38,30 @@ export function Header({ theme, setTheme }: IProps) {
   }
 
   return (
-    <div
-      className={joinStyles(styles.fixedContainer, themeStyles.fixedContainer)}
-    >
-      <div className={joinStyles(styles.container, themeStyles.container)}>
-        <div className={joinStyles(styles.title, themeStyles.title)}>
+    <div className={styles.fixedContainer}>
+      <div className={styles.container}>
+        <div className={styles.title}>
           <a href="/">
-            <span className={themeStyles.peteranderson}>peteranderson</span>
-            <span className={themeStyles.me}>.me</span>
+            <span className={styles.peteranderson}>peteranderson</span>
+            <span className={styles.me}>.me</span>
           </a>
         </div>
         <div className={styles.desktopLinks}>
-          <a
-            className={joinStyles(styles.navLink, themeStyles.navLink)}
-            href="#technology"
-          >
+          <a className={styles.navLink} href="#technology">
             Technology
           </a>
-          <a
-            className={joinStyles(styles.navLink, themeStyles.navLink)}
-            href="#experience"
-          >
+          <a className={styles.navLink} href="#experience">
             Experience
           </a>
-          <a
-            className={joinStyles(styles.navLink, themeStyles.navLink)}
-            href="#contact-me"
-          >
+          <a className={styles.navLink} href="#contact-me">
             Contact me
           </a>
           <div className={styles.spacer} />
           <div className={styles.socialLinksContainer}>
-            <a href="https://www.linkedin.com/in/peter-anderson-30702b32/">
+            <a aria-label="LinkedIn profile" href="https://www.linkedin.com/in/peter-anderson-30702b32/">
               <ThemedSvgLinkedIn height={22} />
             </a>
-            <a href="https://github.com/pete-a">
+            <a aria-label="GitHub profile" href="https://github.com/pete-a">
               <ThemedSvgGitHub height={22} />
             </a>
           </div>
@@ -98,27 +92,28 @@ export function Header({ theme, setTheme }: IProps) {
         >
           <a
             onClick={onLinkClick}
-            className={joinStyles(styles.navLink, themeStyles.navLink)}
+            className={styles.navLink}
             href="#technology"
           >
             Technology
           </a>
           <a
             onClick={onLinkClick}
-            className={joinStyles(styles.navLink, themeStyles.navLink)}
+            className={styles.navLink}
             href="#experience"
           >
             Experience
           </a>
           <a
             onClick={onLinkClick}
-            className={joinStyles(styles.navLink, themeStyles.navLink)}
+            className={styles.navLink}
             href="#contact-me"
           >
             Contact me
           </a>
           <a
-            className={joinStyles(styles.navLink, themeStyles.navLink)}
+            aria-label="LinkedIn profile"
+            className={styles.navLink}
             href="https://www.linkedin.com/in/peter-anderson-30702b32/"
           >
             LinkedIn &nbsp;
@@ -126,7 +121,8 @@ export function Header({ theme, setTheme }: IProps) {
           </a>
           <a
             onClick={onLinkClick}
-            className={joinStyles(styles.navLink, themeStyles.navLink)}
+            aria-label="GitHub profile"
+            className={styles.navLink}
             href="https://github.com/pete-a"
           >
             GitHub &nbsp; <ThemedSvgGitHub height={12} />

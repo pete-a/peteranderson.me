@@ -1,11 +1,11 @@
 import React from "react";
 import SvgHamburger from "./hamburger.svg";
 import { ThemeContext } from "../theme-context";
-import closedStyles from "./hamburger-menu-button--closed.module.css";
-import openStyles from "./hamburger-menu-button--open.module.css";
-import darkStyles from "./hamburger-menu-button--dark.module.css";
-import lightStyles from "./hamburger-menu-button--light.module.css";
-import styles from "./hamburger-menu-button.module.css";
+import closedStyles from "./hamburger-menu-button--closed.module.scss";
+import openStyles from "./hamburger-menu-button--open.module.scss";
+import darkStyles from "./hamburger-menu-button--dark.module.scss";
+import lightStyles from "./hamburger-menu-button--light.module.scss";
+import styles from "./hamburger-menu-button.module.scss";
 import { joinStyles } from "../../utils/styles";
 import { lightTheme, Theme } from "../theme";
 

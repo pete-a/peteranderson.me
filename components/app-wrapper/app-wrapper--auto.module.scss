@@ -1,0 +1,17 @@
+
+@use "../../styling/colors--light.scss" as lightColors;
+@use "../../styling/colors--dark.scss" as darkColors;
+
+@media (prefers-color-scheme: dark) {
+    .container {
+        background-color: darkColors.$backgroundColor;
+        color: darkColors.$primaryTextColor;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .container {
+        background-color: lightColors.$backgroundColor;
+        color: lightColors.$primaryTextColor;
+    }
+}

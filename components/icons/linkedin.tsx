@@ -7,7 +7,7 @@ interface Props extends React.SVGProps<SVGSVGElement> {
 }
 
 export function SvgLinkedin(props: Props) {
-  const color = props.theme.name === "light" ? "#222" : "#fff";
+  const color = props.theme.name === "light" ? "#444" : "#fff";
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path

@@ -1,8 +1,8 @@
 import React from "react";
 import { ThemeContext } from "../theme-context";
-import styles from "./footer.module.css";
-import darkStyles from "./footer--dark.module.css";
-import lightStyles from "./footer--light.module.css";
+import styles from "./footer.module.scss";
+import darkStyles from "./footer--dark.module.scss";
+import lightStyles from "./footer--light.module.scss";
 import { joinStyles } from "../../utils/styles";
 
 export function Footer() {

@@ -1,26 +1,9 @@
 import React from "react";
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
 import { ThemeContext } from "../components/theme-context";
-import SvgReact from "../components/technology-logos/react.svg";
-import SvgRedux from "../components/technology-logos/redux.svg";
-import SvgTypescript from "../components/technology-logos/typescript.svg";
-import SvgPython from "../components/technology-logos/python.svg";
-import SvgNodejs from "../components/technology-logos/nodejs.svg";
-import SvgPostgresql from "../components/technology-logos/postgresql.svg";
-import SvgAws from "../components/technology-logos/aws.svg";
-import SvgDocker from "../components/technology-logos/docker.svg";
-import SvgNextjs from "../components/technology-logos/nextjs.svg";
-import SvgLinux from "../components/technology-logos/linux.svg";
-import SvgGraphql from "../components/technology-logos/graphql.svg";
-import SvgJavascript from "../components/technology-logos/javascript.svg";
 import { TechnologyGrid } from "../components/technology-grid/technology-grid";
-import { lightTheme } from "../components/theme";
-import SvgTelstra from "../components/company-logos/telstra";
-import SvgQantas from "../components/company-logos/qantas";
-import SvgWestfield from "../components/company-logos/westfield";
 import { CompanyLogoRotator } from "../components/company-logo-rotator/company-logo-rotator";
 import { ExternalLink } from "../components/external-link/external-link";
-import { ThemedSvgGitHub } from "../components/icons/github";
 
 function Index() {
   return (

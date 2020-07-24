@@ -1,0 +1,5 @@
+@use "../../styling/colors--light.scss" as colors;
+
+.container {
+  background-color: desaturate(darken(colors.$backgroundColor, 2%), 80%);
+}
