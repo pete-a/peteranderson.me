@@ -19,6 +19,8 @@ import SvgTelstra from "../components/company-logos/telstra";
 import SvgQantas from "../components/company-logos/qantas";
 import SvgWestfield from "../components/company-logos/westfield";
 import { CompanyLogoRotator } from "../components/company-logo-rotator/company-logo-rotator";
+import { ExternalLink } from "../components/external-link/external-link";
+import { ThemedSvgGitHub } from "../components/icons/github";
 
 function Index() {
   return (
@@ -56,8 +58,15 @@ function Index() {
           <div id="contact-me" className={styles.section}>
             <h2>Contact me</h2>
             <p>
-              You can view my GitHub profile, connect with me on LinkedIn, or
-              feel free to send me a message via the form below.
+              You can view my{" "}
+              <ExternalLink href="https://github.com/pete-a">
+                GitHub profile
+              </ExternalLink>
+              , connect with me on{" "}
+              <ExternalLink href="https://www.linkedin.com/in/peter-anderson-30702b32/">
+                LinkedIn
+              </ExternalLink>
+              , or feel free to send me a message via the form below.
             </p>
             <div></div>
           </div>
