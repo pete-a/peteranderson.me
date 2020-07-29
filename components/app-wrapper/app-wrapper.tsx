@@ -10,7 +10,10 @@ interface Props {
   theme: Theme;
 }
 
-export function AppWrapper({ theme, children }: PropsWithChildren<Props>) {
+export function AppWrapper({
+  theme,
+  children,
+}: PropsWithChildren<Props>): JSX.Element {
   const styles = createThemedStyles(theme, baseStyles, {
     lightStyles,
     darkStyles,

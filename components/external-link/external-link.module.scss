@@ -1,7 +1,8 @@
 .link {
-  background-image: url("/external-link.svg");
-  background-position: top 1px right;
   background-repeat: no-repeat;
-  padding-right: 11px;
-  text-decoration: none;
+  text-decoration: underline;
+}
+
+.content {
+  padding-right: 1px;
 }

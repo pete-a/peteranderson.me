@@ -1,11 +1,14 @@
-import { Theme, autoTheme } from "../components/theme";
+import { Theme } from "../components/theme";
 
 export function joinStyles(...styles: string[]): string {
   return styles.join(" ");
 }
 
-export function reduceStyles(name: string, ...styles: object[]): string {
-  function reduce(prev: string, next: object): string {
+export function reduceStyles(
+  name: string,
+  ...styles: Record<string, string>[]
+): string {
+  function reduce(prev: string, next: Record<string, string>): string {
     const className = next[name];
 
     if (className === undefined) {
@@ -60,7 +63,6 @@ export function mergeStyles(
     const bValue = bStyles[key] || "";
     const newObject = { ...prev };
 
-    let value = "";
     if (aValue === "") {
       newObject[key] = bValue;
       return newObject;

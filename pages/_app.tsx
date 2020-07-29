@@ -1,3 +1,4 @@
+import React from "react";
 import "./styles.scss";
 import { ThemeSwitcher } from "../components/theme-switcher";
 import { useEffect, useState } from "react";
@@ -6,14 +7,14 @@ import { Header } from "../components/header/header";
 import Head from "next/head";
 import { Footer } from "../components/footer/footer";
 import { Theme, lightTheme, darkTheme, autoTheme } from "../components/theme";
-import {
-  NextPageContext,
-  AppContextType,
-} from "next/dist/next-server/lib/utils";
+import { AppContextType, AppPropsType } from "next/dist/next-server/lib/utils";
 import { AppWrapper } from "../components/app-wrapper/app-wrapper";
 
-// This default export is required in a new `pages/_app.js` file.
-export default function MyApp(props) {
+interface Props {
+  themeName: "light" | "dark" | null;
+}
+
+export default function MyApp(props: Props & AppPropsType): JSX.Element {
   const { Component, pageProps } = props;
 
   let initialTheme: Theme = autoTheme;
@@ -54,7 +55,7 @@ export default function MyApp(props) {
   );
 }
 
-MyApp.getInitialProps = function (appContext: AppContextType) {
+MyApp.getInitialProps = function (appContext: AppContextType): Props {
   if (appContext.ctx.req?.headers.cookie) {
     const cookie = appContext.ctx.req.headers.cookie;
     if (cookie.indexOf("theme=light") > -1) {

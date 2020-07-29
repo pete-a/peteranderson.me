@@ -5,7 +5,7 @@ import darkStyles from "./footer--dark.module.scss";
 import lightStyles from "./footer--light.module.scss";
 import { joinStyles } from "../../utils/styles";
 
-export function Footer() {
+export function Footer(): JSX.Element {
   return (
     <ThemeContext.Consumer>
       {(theme) => {

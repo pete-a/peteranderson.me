@@ -1,0 +1,10 @@
+@use "../../styling/colors--light.scss" as colors;
+
+.link,
+.link:visited {
+  color: colors.$primaryTextColor;
+}
+
+.icon {
+  fill: colors.$primaryTextColor;
+}

@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useState, useEffect } from "react";
+import React, { PropsWithChildren, useEffect } from "react";
 import styles from "./hamburger-menu.module.scss";
 import lightStyles from "./hamburger-menu--light.module.scss";
 import darkStyles from "./hamburger-menu--dark.module.scss";
@@ -10,11 +10,11 @@ interface IProps {
   setStatus: (status: "open" | "closed") => unknown;
 }
 
-export const HamburgerMenu = ({
+export function HamburgerMenu({
   status,
   children,
   setStatus,
-}: PropsWithChildren<IProps>) => {
+}: PropsWithChildren<IProps>): JSX.Element {
   if (typeof window !== "undefined" && status === "open") {
     handleWindowResize(setStatus);
   }
@@ -42,11 +42,11 @@ export const HamburgerMenu = ({
       }}
     </ThemeContext.Consumer>
   );
-};
+}
 
 function handleWindowResize(setStatus: (status: "open" | "closed") => unknown) {
   useEffect(() => {
-    var resizeTimer: NodeJS.Timeout;
+    let resizeTimer: NodeJS.Timeout;
     function handleResize() {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {

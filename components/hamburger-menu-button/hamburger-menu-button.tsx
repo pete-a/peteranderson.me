@@ -15,7 +15,7 @@ interface Props {
   onClick: () => unknown;
 }
 
-export function HamburgerMenuButton(props: Props) {
+export function HamburgerMenuButton(props: Props): JSX.Element {
   const statusStyles = props.menuStatus === "open" ? openStyles : closedStyles;
   const themeStyles = props.theme.name === "dark" ? darkStyles : lightStyles;
 
@@ -42,7 +42,9 @@ export function HamburgerMenuButton(props: Props) {
   );
 }
 
-export function ThemedHamburgerMenuButton(props: Omit<Props, "theme">) {
+export function ThemedHamburgerMenuButton(
+  props: Omit<Props, "theme">
+): JSX.Element {
   return (
     <ThemeContext.Consumer>
       {(theme) => (

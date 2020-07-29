@@ -7,8 +7,8 @@ import { Theme, lightTheme } from "../theme";
 export const ToggleSwitch = (props: {
   checked: boolean;
   theme: Theme;
-  onToggle: () => any;
-}) => {
+  onToggle: () => unknown;
+}): JSX.Element => {
   const themeStyles = props.theme.name === "light" ? lightStyles : darkStyles;
 
   const checkedStyle = props.checked ? sharedStyles.checked : "";

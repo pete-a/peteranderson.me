@@ -8,15 +8,15 @@ import { SunMoon } from "../sun-moon/sun-moon";
 import { HamburgerMenu } from "../hamburger-menu/hamburger-menu";
 import { ThemedHamburgerMenuButton } from "../hamburger-menu-button/hamburger-menu-button";
 import { Theme, lightTheme, darkTheme } from "../theme";
-import { ThemedSvgGitHub } from "../icons/github";
-import { ThemedSvgLinkedIn } from "../icons/linkedin";
+import { ThemedSvgGitHub } from "../icons/github.svg";
+import { ThemedSvgLinkedIn } from "../icons/linkedin.svg";
 
 interface IProps {
   theme: Theme;
-  setTheme: (theme: Theme) => any;
+  setTheme: (theme: Theme) => unknown;
 }
 
-export function Header({ theme, setTheme }: IProps) {
+export function Header({ theme, setTheme }: IProps): JSX.Element {
   const [hamburgerMenuStatus, setHamburgerMenuStatus] = useState<
     "open" | "closed"
   >("closed");
@@ -58,7 +58,10 @@ export function Header({ theme, setTheme }: IProps) {
           </a>
           <div className={styles.spacer} />
           <div className={styles.socialLinksContainer}>
-            <a aria-label="LinkedIn profile" href="https://www.linkedin.com/in/peter-anderson-30702b32/">
+            <a
+              aria-label="LinkedIn profile"
+              href="https://www.linkedin.com/in/peter-anderson-30702b32/"
+            >
               <ThemedSvgLinkedIn height={22} />
             </a>
             <a aria-label="GitHub profile" href="https://github.com/pete-a">

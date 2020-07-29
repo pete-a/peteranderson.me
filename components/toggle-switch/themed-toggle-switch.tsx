@@ -4,8 +4,8 @@ import { ToggleSwitch } from "./toggle-switch";
 
 export const ThemedToggleSwitch = (props: {
   checked: boolean;
-  onToggle: () => any;
-}) => {
+  onToggle: () => unknown;
+}): JSX.Element => {
   return (
     <ThemeContext.Consumer>
       {(theme) => (

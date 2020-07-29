@@ -18,6 +18,7 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
+  line-height: 1.25em;
 }
 
 h1 {
@@ -30,7 +31,6 @@ h1 {
     color: light.$primaryTextColor;
   }
 }
-
 
 @media (prefers-color-scheme: dark) {
   body {

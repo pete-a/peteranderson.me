@@ -29,7 +29,7 @@ const logos = [
   SvgPostgresql,
 ];
 
-export const TechnologyGrid = ({ theme }: { theme: Theme }) => (
+export const TechnologyGrid = ({ theme }: { theme: Theme }): JSX.Element => (
   <div className={styles.container}>
     <div className={styles.content}>
       {logos.map((logo, i) => (

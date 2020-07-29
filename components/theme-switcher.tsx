@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Theme, lightTheme, darkTheme } from "./theme";
 
 export function ThemeSwitcher(
-  props: React.PropsWithChildren<{ onSwitch: (theme: Theme) => any }>
-) {
+  props: React.PropsWithChildren<{ onSwitch: (theme: Theme) => unknown }>
+): JSX.Element {
   useEffect(() => {
     let cookieSet = false;
     if (typeof document !== "undefined") {
