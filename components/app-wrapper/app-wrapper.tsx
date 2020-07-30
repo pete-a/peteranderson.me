@@ -24,6 +24,10 @@ export function AppWrapper({
   const [yPosition, setYPosition] = useState(0);
 
   useEffect(() => {
+    document.body.className = styles.container;
+  }, [theme]);
+
+  useEffect(() => {
     function onWindowScroll() {
       window.requestAnimationFrame(() => {
         setYPosition(window.scrollY);
@@ -31,8 +35,8 @@ export function AppWrapper({
     }
 
     onWindowScroll();
-
     window.addEventListener("scroll", onWindowScroll);
+
     return () => {
       window.removeEventListener("scroll", onWindowScroll);
     };

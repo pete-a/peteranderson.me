@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./index.module.scss";
 import { ThemeContext } from "../components/theme-context";
-import { TechnologyGrid } from "../components/technology-grid/technology-grid";
 import { CompanyLogoRotator } from "../components/company-logo-rotator/company-logo-rotator";
 import { ThemedExternalLink } from "../components/external-link/external-link";
 import { ThemedHeading } from "../components/heading/heading";
-import { ThemedButton } from "../components/button/button";
 import { YPositionContext } from "../components/y-position-context";
+import { TechnologySection } from "../components/page-sections/technology-section/technology-section";
+import { ContactForm } from "../components/contact-form/contact-form";
 
 function Index(): JSX.Element {
   return (
@@ -18,7 +18,7 @@ function Index(): JSX.Element {
               <div className={styles.intro}>
                 <div
                   className={styles.introContent}
-                  style={{ opacity: Math.max(0, (100 - yPosition / 2) / 100) }}
+                  style={{ opacity: Math.max(0, (150 - yPosition / 2) / 100) }}
                 >
                   <ThemedHeading size="h1">
                     Hi there{" "}
@@ -33,14 +33,8 @@ function Index(): JSX.Element {
                 </div>
               </div>
 
-              <div id="technology" className={styles.section}>
-                <ThemedHeading size="h2">Technology</ThemedHeading>
-                <p>
-                  I primarily work with these languages, frameworks and
-                  platforms:
-                </p>
-                <TechnologyGrid theme={theme} />
-              </div>
+              <TechnologySection className={styles.section} />
+
               <div id="experience" className={styles.section}>
                 <ThemedHeading size="h2">Experience</ThemedHeading>
                 <p>
@@ -62,9 +56,7 @@ function Index(): JSX.Element {
                   </ThemedExternalLink>
                   , or feel free to send me a message via the form below.
                 </p>
-                <form>
-                  <ThemedButton disabled={false}>Send</ThemedButton>
-                </form>
+                <ContactForm />
                 <div></div>
               </div>
             </>

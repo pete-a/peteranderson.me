@@ -1,0 +1,16 @@
+@use "../../styling/colors--dark.scss" as colors;
+
+.input,
+.textarea {
+  border: solid 1px darken(colors.$secondaryTextColor, 75%);
+  color: colors.$primaryTextColor;
+  background-color: lighten(colors.$backgroundColor, 10%);
+
+  &:focus {
+    border-color: hsl(colors.$hue, 100%, 40%);
+  }
+
+  &::placeholder {
+    color: rgba(colors.$secondaryTextColor, 1);
+  }
+}

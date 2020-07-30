@@ -17,7 +17,7 @@ export function Button(props: PropsWithChildren<Props>): JSX.Element {
     darkStyles,
   });
   return (
-    <button disabled={props.disabled} className={styles.button}>
+    <button disabled={props.disabled} className={styles.button} type="submit">
       {props.children}
     </button>
   );

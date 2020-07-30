@@ -13,6 +13,7 @@ import SvgAws from "../technology-logos/aws.svg";
 import SvgDocker from "../technology-logos/docker.svg";
 import { Theme } from "../theme";
 import SvgFastapi from "../technology-logos/fastapi.svg";
+import { ThemeContext } from "../theme-context";
 
 const logos = [
   SvgTypescript,
@@ -40,3 +41,11 @@ export const TechnologyGrid = ({ theme }: { theme: Theme }): JSX.Element => (
     </div>
   </div>
 );
+
+export function ThemedTechnologyGrid(): JSX.Element {
+  return (
+    <ThemeContext.Consumer>
+      {(theme) => <TechnologyGrid theme={theme} />}
+    </ThemeContext.Consumer>
+  );
+}
