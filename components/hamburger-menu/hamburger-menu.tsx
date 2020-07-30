@@ -1,9 +1,9 @@
 import React, { PropsWithChildren, useEffect } from "react";
-import styles from "./hamburger-menu.module.scss";
+import baseStyles from "./hamburger-menu.module.scss";
 import lightStyles from "./hamburger-menu--light.module.scss";
 import darkStyles from "./hamburger-menu--dark.module.scss";
 import { ThemeContext } from "../theme-context";
-import { joinStyles } from "../../utils/styles";
+import { joinStyles, createThemedStyles } from "../../utils/styles";
 
 interface IProps {
   status: "open" | "closed";
@@ -27,15 +27,19 @@ export function HamburgerMenu({
   return (
     <ThemeContext.Consumer>
       {(theme) => {
-        const statusStyle = status === "open" ? styles.open : styles.closed;
-        const themeStyles = theme.name === "dark" ? darkStyles : lightStyles;
+        const statusStyle =
+          status === "open" ? baseStyles.open : baseStyles.closed;
+        const themeStyles = createThemedStyles(theme, baseStyles, {
+          darkStyles,
+          lightStyles,
+        });
         return (
           <>
             <div className={joinStyles(statusStyle, themeStyles.container)}>
               {children}
             </div>
             {status === "open" && (
-              <div className={styles.overlay} onClick={onClickOutside} />
+              <div className={baseStyles.overlay} onClick={onClickOutside} />
             )}
           </>
         );

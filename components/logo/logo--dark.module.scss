@@ -1,0 +1,10 @@
+@use "../../styling/colors--dark.scss" as colors;
+
+.container,
+.peteranderson {
+  color: hsl(colors.$hue, 10%, 95%);
+}
+
+.me {
+  color: desaturate(darken(colors.$secondaryTextColor, 30%), 20%);
+}

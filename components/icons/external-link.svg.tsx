@@ -6,7 +6,7 @@ interface Props extends React.SVGProps<SVGSVGElement> {
 
 function SvgExternalLink(props: Props) {
   return (
-    <svg width={12} height={12} {...props}>
+    <svg width={12} height={12}>
       <g
         className={props.cssClass}
         fillRule="evenodd"

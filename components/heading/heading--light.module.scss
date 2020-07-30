@@ -1,0 +1,5 @@
+@use "../../styling/colors--light.scss" as colors;
+
+.heading {
+  color: hsl(colors.$hue, 10%, 25%);
+}

@@ -1,0 +1,21 @@
+.container {
+  font-weight: bolder;
+  font-size: 1.2em;
+  transition: color 500ms;
+  margin-right: 20px;
+  line-height: 1em;
+}
+
+.container a,
+.container a:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+.large {
+  font-size: 1.2em;
+}
+
+.small {
+  font-size: 1em;
+}

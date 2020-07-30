@@ -1,0 +1,10 @@
+@use "../../styling/colors--light.scss" as colors;
+
+.container,
+.peteranderson {
+  color: hsl(colors.$hue, 10%, 35%);
+}
+
+.me {
+  color: lighten(colors.$secondaryTextColor, 40%);
+}

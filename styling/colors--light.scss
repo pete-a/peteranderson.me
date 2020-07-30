@@ -1,4 +1,6 @@
-// $backgroundColor: #fafaff;
-$backgroundColor: #f8f9fa;
-$primaryTextColor: #25282d;
-$secondaryTextColor: #444;
+@use "./base";
+$hue: base.$hue;
+
+$backgroundColor: hsl($hue, 10%, 97%);
+$primaryTextColor: hsl($hue, 10%, 10%);
+$secondaryTextColor: hsl($hue, 10%, 40%);

@@ -28,7 +28,7 @@ export default function MyApp(props: Props & AppPropsType): JSX.Element {
   const [theme, setTheme] = useState<Theme>(initialTheme);
 
   useEffect(() => {
-    document.cookie = `theme=${theme.name}`;
+    document.cookie = `theme=${theme.name}; SameSite=Lax`;
   }, [theme]);
   return (
     <>

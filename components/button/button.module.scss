@@ -1,0 +1,15 @@
+@use '../../styling/colors--light.scss' as colors;
+.button {
+  font-size: 0.9em;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  padding: 0.5em 1em;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  &:disabled {
+    cursor: default;
+  }
+}

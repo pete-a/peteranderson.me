@@ -10,6 +10,7 @@ import { ThemedHamburgerMenuButton } from "../hamburger-menu-button/hamburger-me
 import { Theme, lightTheme, darkTheme } from "../theme";
 import { ThemedSvgGitHub } from "../icons/github.svg";
 import { ThemedSvgLinkedIn } from "../icons/linkedin.svg";
+import { ThemedLogo } from "../logo/logo";
 
 interface IProps {
   theme: Theme;
@@ -40,12 +41,7 @@ export function Header({ theme, setTheme }: IProps): JSX.Element {
   return (
     <div className={styles.fixedContainer}>
       <div className={styles.container}>
-        <div className={styles.title}>
-          <a href="/">
-            <span className={styles.peteranderson}>peteranderson</span>
-            <span className={styles.me}>.me</span>
-          </a>
-        </div>
+        <ThemedLogo />
         <div className={styles.desktopLinks}>
           <a className={styles.navLink} href="#technology">
             Technology

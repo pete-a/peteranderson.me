@@ -1,0 +1,12 @@
+@use "../../styling/colors--dark.scss" as colors;
+
+.button {
+  background: hsl(colors.$hue, 100%, 45%);
+  border: solid 1px hsl(colors.$hue, 50%, 20%);
+
+  &:disabled {
+    background: hsl(colors.$hue, 10%, 50%);
+    border: solid 1px hsl(colors.$hue, 10%, 45%);
+    color: hsl(colors.$hue, 10%, 98%);
+  }
+}
