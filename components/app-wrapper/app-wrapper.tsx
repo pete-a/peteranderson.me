@@ -5,6 +5,7 @@ import darkStyles from "./app-wrapper--dark.module.scss";
 import lightStyles from "./app-wrapper--light.module.scss";
 import autoStyles from "./app-wrapper--auto.module.scss";
 import { createThemedStyles } from "../../utils/styles";
+import { YPositionContext } from "../y-position-context";
 
 interface Props {
   theme: Theme;
@@ -24,20 +25,24 @@ export function AppWrapper({
 
   useEffect(() => {
     function onWindowScroll() {
-      console.log("IN");
-      setYPosition(window.scrollY);
+      window.requestAnimationFrame(() => {
+        setYPosition(window.scrollY);
+      });
     }
 
-    // onWindowScroll();
+    onWindowScroll();
 
     window.addEventListener("scroll", onWindowScroll);
-    return window.removeEventListener("scroll", onWindowScroll);
+    return () => {
+      window.removeEventListener("scroll", onWindowScroll);
+    };
   }, []);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.content}>{children}</div>
-      <h1>{yPosition}</h1>
-    </div>
+    <YPositionContext.Provider value={yPosition}>
+      <div className={styles.container}>
+        <div className={styles.content}>{children}</div>
+      </div>
+    </YPositionContext.Provider>
   );
 }
