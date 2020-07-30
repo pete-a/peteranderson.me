@@ -30,7 +30,8 @@ export function TechnologySection(props: Props): JSX.Element {
           >
             <ThemedHeading size="h2">Technology</ThemedHeading>
             <p>
-              I primarily work with these languages, frameworks and platforms:
+              I build complex web applications with these languages, frameworks
+              and platforms:
             </p>
             <ThemedTechnologyGrid />
           </div>

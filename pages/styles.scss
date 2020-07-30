@@ -1,6 +1,10 @@
 @use "../styling/colors--dark.scss" as dark;
 @use "../styling/colors--light.scss" as light;
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 html,
 body {
   height: 100%;
