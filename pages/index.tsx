@@ -16,7 +16,7 @@ function Index(): JSX.Element {
         <>
           <IntroSection />
 
-          <TechnologySection className={styles.section} />
+          <TechnologySection />
 
           <div id="experience" className={styles.section}>
             <ThemedHeading size="h2">Experience</ThemedHeading>
