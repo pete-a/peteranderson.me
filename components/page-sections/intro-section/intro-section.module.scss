@@ -9,19 +9,26 @@
   animation-delay: 500ms;
   animation-fill-mode: forwards;
   line-height: 1.5em;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .introContent {
+  padding-bottom: 100px;
   position: relative;
-  top: -40px;
+  em {
+    font-weight: bold;
+    font-size: 1.1em;
+  }
 }
 
 .summary {
   margin-top: 3em;
   opacity: 0;
-  animation: fade-in 1.5s 2s;
+  animation: fade-in 1.5s 1.5s;
   animation-fill-mode: forwards;
+  font-size: 1.1em;
+  top: -20px;
+  line-height: 1.75em;
 }
 
 .hand {

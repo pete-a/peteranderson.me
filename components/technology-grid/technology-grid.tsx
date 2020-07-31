@@ -38,13 +38,18 @@ export function TechnologyGrid({ theme }: { theme: Theme }): JSX.Element {
     darkStyles,
     lightStyles,
   });
+  const reactLogos = logos.map((logo) => React.createElement(logo, { theme }));
 
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        {logos.map((logo, i) => (
-          <div key={`logo-${i}`} className={styles.logoContainer}>
-            {React.createElement(logo, { theme })}
+        {reactLogos.map((logo, i) => (
+          <div
+            key={`logo-${i}`}
+            className={styles.logoContainer}
+            style={{ animationDelay: `${250 * i}ms` }}
+          >
+            {logo}
           </div>
         ))}
       </div>

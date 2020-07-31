@@ -34,8 +34,8 @@ export function TechnologySection(): JSX.Element {
               <div className={styles.content}>
                 <ThemedHeading size="h2">Technology</ThemedHeading>
                 <p>
-                  I build complex web applications with these languages,
-                  frameworks and platforms:
+                  I have extensive experience with these languages, frameworks
+                  and platforms:
                 </p>
                 <ThemedTechnologyGrid />
               </div>
