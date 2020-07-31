@@ -1,18 +1,17 @@
 .container {
   max-width: 600px;
   margin: auto;
-  margin-top: 40px;
+  margin-top: 30px;
+  min-height: 500px;
 }
 
 .row {
-  padding-bottom: 5px;
   display: block;
 }
 
 .messageRow {
   display: block;
   padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 .actionRow {

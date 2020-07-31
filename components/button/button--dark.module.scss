@@ -1,6 +1,7 @@
 @use "../../styling/colors--dark.scss" as colors;
 
-.button {
+.button,
+.buttonLoading {
   background: hsl(colors.$hue, 100%, 45%);
   border: solid 1px hsl(colors.$hue, 50%, 20%);
 

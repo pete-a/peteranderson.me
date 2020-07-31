@@ -9,6 +9,7 @@ import darkStyles from "./button--dark.module.scss";
 interface Props {
   theme: Theme;
   disabled?: boolean;
+  loading?: boolean;
 }
 
 export function Button(props: PropsWithChildren<Props>): JSX.Element {
@@ -16,6 +17,19 @@ export function Button(props: PropsWithChildren<Props>): JSX.Element {
     lightStyles,
     darkStyles,
   });
+
+  if (props.loading === true) {
+    return (
+      <button disabled={true} className={styles.buttonLoading} type="submit">
+        <img
+          className={styles.loadingIcon}
+          width={20}
+          src="/icons/loading-oval.svg"
+        />
+        <span className={styles.hidden}>{props.children}</span>
+      </button>
+    );
+  }
   return (
     <button disabled={props.disabled} className={styles.button} type="submit">
       {props.children}

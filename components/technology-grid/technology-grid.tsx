@@ -1,5 +1,7 @@
 import React from "react";
-import styles from "./technology-grid.module.scss";
+import baseStyles from "./technology-grid.module.scss";
+import darkStyles from "./technology-grid--dark.module.scss";
+import lightStyles from "./technology-grid--light.module.scss";
 import SvgTypescript from "../technology-logos/typescript.svg";
 import SvgJavascript from "../technology-logos/javascript.svg";
 import SvgPython from "../technology-logos/python.svg";
@@ -14,6 +16,7 @@ import SvgDocker from "../technology-logos/docker.svg";
 import { Theme } from "../theme";
 import SvgFastapi from "../technology-logos/fastapi.svg";
 import { ThemeContext } from "../theme-context";
+import { createThemedStyles } from "../../utils/styles";
 
 const logos = [
   SvgTypescript,
@@ -30,17 +33,24 @@ const logos = [
   SvgPostgresql,
 ];
 
-export const TechnologyGrid = ({ theme }: { theme: Theme }): JSX.Element => (
-  <div className={styles.container}>
-    <div className={styles.content}>
-      {logos.map((logo, i) => (
-        <div key={`logo-${i}`} className={styles.logoContainer}>
-          {React.createElement(logo, { theme })}
-        </div>
-      ))}
+export function TechnologyGrid({ theme }: { theme: Theme }): JSX.Element {
+  const styles = createThemedStyles(theme, baseStyles, {
+    darkStyles,
+    lightStyles,
+  });
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.content}>
+        {logos.map((logo, i) => (
+          <div key={`logo-${i}`} className={styles.logoContainer}>
+            {React.createElement(logo, { theme })}
+          </div>
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+}
 
 export function ThemedTechnologyGrid(): JSX.Element {
   return (

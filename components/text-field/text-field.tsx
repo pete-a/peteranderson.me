@@ -10,6 +10,18 @@ interface Props {
   label: string;
   theme: Theme;
   type?: "text" | "email";
+  error?: string;
+  disabled?: boolean;
+  onChange: (newValue: string) => void;
+}
+
+function onInputChange(onChange: (newValue: string) => void) {
+  return function (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) {
+    const newValue = e.target.value;
+    onChange(newValue);
+  };
 }
 
 export function TextField(props: Props): JSX.Element {
@@ -17,13 +29,28 @@ export function TextField(props: Props): JSX.Element {
     lightStyles,
     darkStyles,
   });
+
+  const inputClassNames = props.error
+    ? `${styles.input} ${styles.errorInput}`
+    : styles.input;
+
+  const onChange = onInputChange(props.onChange);
   return (
-    <input
-      type={props.type || "text"}
-      aria-label={props.label}
-      className={styles.input}
-      placeholder={props.label}
-    />
+    <>
+      <input
+        type={props.type || "text"}
+        aria-label={props.label}
+        className={inputClassNames}
+        placeholder={props.label}
+        onChange={onChange}
+        disabled={props.disabled}
+      />
+      {props.error ? (
+        <span className={styles.errorMessage}>{props.error}</span>
+      ) : (
+        <span className={styles.errorMessage}>&nbsp;</span>
+      )}
+    </>
   );
 }
 
@@ -40,13 +67,27 @@ export function TextArea(props: Omit<Props, "type">): JSX.Element {
     lightStyles,
     darkStyles,
   });
+  const inputClassNames = props.error
+    ? `${styles.textarea} ${styles.errorInput}`
+    : styles.textarea;
+
+  const onChange = onInputChange(props.onChange);
   return (
-    <textarea
-      rows={8}
-      className={styles.textarea}
-      aria-label={props.label}
-      placeholder={props.label}
-    ></textarea>
+    <>
+      <textarea
+        rows={6}
+        className={inputClassNames}
+        aria-label={props.label}
+        placeholder={props.label}
+        onChange={onChange}
+        disabled={props.disabled}
+      ></textarea>
+      {props.error ? (
+        <span className={styles.errorMessage}>{props.error}</span>
+      ) : (
+        <span className={styles.errorMessage}>&nbsp;</span>
+      )}
+    </>
   );
 }
 

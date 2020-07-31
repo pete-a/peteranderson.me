@@ -13,4 +13,18 @@
   &::placeholder {
     color: rgba(colors.$secondaryTextColor, 1);
   }
+
+  &:disabled {
+    color: rgba(colors.$primaryTextColor, 0.5);
+  }
+}
+
+$errorColor: rgb(235, 21, 75);
+
+.errorInput {
+  border-color: $errorColor;
+}
+
+.errorMessage {
+  color: $errorColor;
 }
