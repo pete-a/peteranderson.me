@@ -11,6 +11,7 @@ import { Theme, lightTheme, darkTheme } from "../theme";
 import { ThemedSvgGitHub } from "../icons/github.svg";
 import { ThemedSvgLinkedIn } from "../icons/linkedin.svg";
 import { ThemedLogo } from "../logo/logo";
+import Link from "next/link";
 
 interface IProps {
   theme: Theme;
@@ -43,15 +44,15 @@ export function Header({ theme, setTheme }: IProps): JSX.Element {
       <div className={styles.container}>
         <ThemedLogo />
         <div className={styles.desktopLinks}>
-          <a className={styles.navLink} href="#technology">
-            Technology
-          </a>
-          <a className={styles.navLink} href="#experience">
-            Experience
-          </a>
-          <a className={styles.navLink} href="#contact-me">
-            Contact me
-          </a>
+          <Link href="/technology">
+            <a className={styles.navLink}>Technology</a>
+          </Link>
+          <Link href="/experience">
+            <a className={styles.navLink}>Experience</a>
+          </Link>
+          <Link href="/contact-me">
+            <a className={styles.navLink}>Contact me</a>
+          </Link>
           <div className={styles.spacer} />
           <div className={styles.socialLinksContainer}>
             <a
@@ -89,27 +90,21 @@ export function Header({ theme, setTheme }: IProps): JSX.Element {
           status={hamburgerMenuStatus}
           setStatus={setHamburgerMenuStatus}
         >
-          <a
-            onClick={onLinkClick}
-            className={styles.navLink}
-            href="#technology"
-          >
-            Technology
-          </a>
-          <a
-            onClick={onLinkClick}
-            className={styles.navLink}
-            href="#experience"
-          >
-            Experience
-          </a>
-          <a
-            onClick={onLinkClick}
-            className={styles.navLink}
-            href="#contact-me"
-          >
-            Contact me
-          </a>
+          <Link href="/technology">
+            <a onClick={onLinkClick} className={styles.navLink}>
+              Technology
+            </a>
+          </Link>
+          <Link href="/experience">
+            <a onClick={onLinkClick} className={styles.navLink}>
+              Experience
+            </a>
+          </Link>
+          <Link href="/contact-me">
+            <a onClick={onLinkClick} className={styles.navLink}>
+              Contact me
+            </a>
+          </Link>
           <a
             aria-label="LinkedIn profile"
             className={styles.navLink}

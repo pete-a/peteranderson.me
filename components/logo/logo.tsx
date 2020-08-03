@@ -5,6 +5,7 @@ import lightStyles from "./logo--light.module.scss";
 import { createThemedStyles } from "../../utils/styles";
 import { Theme } from "../theme";
 import { ThemeContext } from "../theme-context";
+import Link from "next/link";
 
 interface Props {
   theme: Theme;
@@ -19,10 +20,12 @@ export function Logo(props: Props): JSX.Element {
 
   return (
     <div className={`${styles.container} ${styles[props.size]}`}>
-      <a href="/">
-        <span className={styles.peteranderson}>peteranderson</span>
-        <span className={styles.me}>.me</span>
-      </a>
+      <Link href="/">
+        <a>
+          <span className={styles.peteranderson}>peteranderson</span>
+          <span className={styles.me}>.me</span>
+        </a>
+      </Link>
     </div>
   );
 }

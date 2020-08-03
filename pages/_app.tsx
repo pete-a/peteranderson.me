@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { ThemeContext } from "../components/theme-context";
 import { Header } from "../components/header/header";
 import Head from "next/head";
-import { Footer } from "../components/footer/footer";
+
 import { Theme, lightTheme, darkTheme, autoTheme } from "../components/theme";
 import { AppContextType, AppPropsType } from "next/dist/next-server/lib/utils";
 import { AppWrapper } from "../components/app-wrapper/app-wrapper";
@@ -47,7 +47,6 @@ export default function MyApp(props: Props & AppPropsType): JSX.Element {
           <AppWrapper theme={theme}>
             <Header theme={theme} setTheme={setTheme} />
             <Component {...pageProps} />
-            <Footer />
           </AppWrapper>
         </ThemeSwitcher>
       </ThemeContext.Provider>

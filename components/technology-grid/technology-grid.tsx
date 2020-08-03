@@ -33,29 +33,33 @@ const logos = [
   SvgPostgresql,
 ];
 
-export function TechnologyGrid({ theme }: { theme: Theme }): JSX.Element {
-  const styles = createThemedStyles(theme, baseStyles, {
-    darkStyles,
-    lightStyles,
-  });
-  const reactLogos = logos.map((logo) => React.createElement(logo, { theme }));
+export const TechnologyGrid = React.memo(
+  ({ theme }: { theme: Theme }): JSX.Element => {
+    const styles = createThemedStyles(theme, baseStyles, {
+      darkStyles,
+      lightStyles,
+    });
+    const reactLogos = logos.map((logo) =>
+      React.createElement(logo, { theme })
+    );
 
-  return (
-    <div className={styles.container}>
-      <div className={styles.content}>
-        {reactLogos.map((logo, i) => (
-          <div
-            key={`logo-${i}`}
-            className={styles.logoContainer}
-            style={{ animationDelay: `${250 * i}ms` }}
-          >
-            {logo}
-          </div>
-        ))}
+    return (
+      <div className={styles.container}>
+        <div className={styles.content}>
+          {reactLogos.map((logo, i) => (
+            <div
+              key={`logo-${i}`}
+              className={styles.logoContainer}
+              style={{ animationDelay: `${100 * i}ms` }}
+            >
+              {logo}
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
+);
 
 export function ThemedTechnologyGrid(): JSX.Element {
   return (
