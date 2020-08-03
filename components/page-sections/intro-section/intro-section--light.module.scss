@@ -1,0 +1,4 @@
+@use "../../../styling/colors--light.scss" as colors;
+.photo {
+  border: solid 1px hsl(colors.$hue, 4%, 77%);
+}

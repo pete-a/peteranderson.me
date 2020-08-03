@@ -20,6 +20,10 @@
   }
 }
 
+.photo {
+  border-radius: 50%;
+}
+
 .introContent {
   padding-bottom: 100px;
   em {
@@ -31,7 +35,7 @@
 .summary {
   margin-top: 3em;
   opacity: 0;
-  animation: fade-in 1.5s 1.5s;
+  animation: fade-in 1.5s 1.75s;
   animation-fill-mode: forwards;
   font-size: 1.1em;
   top: -20px;
@@ -39,7 +43,7 @@
 }
 
 .hand {
-  animation: wave 250ms;
+  animation: wave 250ms 500ms;
   animation-iteration-count: 2;
   animation-timing-function: cubic-bezier();
   display: inline-block;

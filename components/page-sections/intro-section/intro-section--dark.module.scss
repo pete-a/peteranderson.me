@@ -1,0 +1,5 @@
+@use "../../../styling/colors--dark.scss" as colors;
+.photo {
+  border: solid 1px hsl(colors.$hue, 10%, 35%);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+}
