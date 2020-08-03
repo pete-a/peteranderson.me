@@ -9,6 +9,7 @@ import Head from "next/head";
 import { Theme, lightTheme, darkTheme, autoTheme } from "../components/theme";
 import { AppContextType, AppPropsType } from "next/dist/next-server/lib/utils";
 import { AppWrapper } from "../components/app-wrapper/app-wrapper";
+import { useRouter } from "next/router";
 
 interface Props {
   themeName: "light" | "dark" | null;
@@ -27,9 +28,23 @@ export default function MyApp(props: Props & AppPropsType): JSX.Element {
 
   const [theme, setTheme] = useState<Theme>(initialTheme);
 
+  const router = useRouter();
+
   useEffect(() => {
     document.cookie = `theme=${theme.name}; SameSite=Lax`;
   }, [theme]);
+
+  useEffect(() => {
+    function handleRouteChange(url: string) {
+      gtag("config", "UA-53493739-1", { page_path: url });
+    }
+
+    router.events.on("routeChangeStart", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeStart", handleRouteChange);
+    };
+  }, []);
+
   return (
     <>
       <Head>
@@ -41,6 +56,21 @@ export default function MyApp(props: Props & AppPropsType): JSX.Element {
         <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
         <link rel="alternate icon" href="/favicon.png"></link>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=UA-53493739-1"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            
+              gtag('config', 'UA-53493739-1');
+        `,
+          }}
+        ></script>
       </Head>
       <ThemeContext.Provider value={theme}>
         <ThemeSwitcher onSwitch={setTheme}>
