@@ -26,20 +26,22 @@ export function ContactMeSection(): JSX.Element {
   }
 
   return (
-    <div id="contact-me" className={styles.container}>
-      <ThemedHeading size="h2">Contact me</ThemedHeading>
-      <p>
-        You can view my{" "}
-        <ThemedExternalLink href="https://github.com/pete-a">
-          GitHub profile
-        </ThemedExternalLink>
-        , connect with me on{" "}
-        <ThemedExternalLink href="https://www.linkedin.com/in/peter-anderson-30702b32/">
-          LinkedIn
-        </ThemedExternalLink>
-        , or feel free to send me a message via the form below.
-      </p>
-      <ContactForm onValidSubmit={onSubmit} />
+    <div className={styles.container}>
+      <div>
+        <ThemedHeading size="h2">Contact me</ThemedHeading>
+        <p>
+          You can view my{" "}
+          <ThemedExternalLink href="https://github.com/pete-a">
+            GitHub profile
+          </ThemedExternalLink>
+          , connect with me on{" "}
+          <ThemedExternalLink href="https://www.linkedin.com/in/peter-anderson-30702b32/">
+            LinkedIn
+          </ThemedExternalLink>
+          , or feel free to send me a message via the form below.
+        </p>
+        <ContactForm onValidSubmit={onSubmit} />
+      </div>
     </div>
   );
 }

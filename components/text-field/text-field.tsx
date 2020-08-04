@@ -48,7 +48,9 @@ export function TextField(props: Props): JSX.Element {
       {props.error ? (
         <span className={styles.errorMessage}>{props.error}</span>
       ) : (
-        <span className={styles.errorMessage}>&nbsp;</span>
+        <span className={styles.errorMessage} style={{ height: 0 }}>
+          &nbsp;
+        </span>
       )}
     </>
   );
@@ -85,7 +87,9 @@ export function TextArea(props: Omit<Props, "type">): JSX.Element {
       {props.error ? (
         <span className={styles.errorMessage}>{props.error}</span>
       ) : (
-        <span className={styles.errorMessage}>&nbsp;</span>
+        <span className={styles.errorMessage} style={{ height: 0 }}>
+          &nbsp;
+        </span>
       )}
     </>
   );
