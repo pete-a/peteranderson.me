@@ -1,16 +1,28 @@
 import React from "react";
 import { ThemedHeading } from "../../heading/heading";
 import { ThemedExternalLink } from "../../external-link/external-link";
-import { ContactForm } from "../../contact-form/contact-form";
+import { ContactForm, MessageData } from "../../contact-form/contact-form";
 import styles from "./contact-me-section.module.scss";
 
 export function ContactMeSection(): JSX.Element {
-  function mockApiCall(): Promise<"ok" | "error"> {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve("ok");
-      }, 4000);
-    });
+  async function onSubmit(data: MessageData) {
+    try {
+      const response = await fetch("/api/message", {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) {
+        console.error(response);
+        return "error";
+      }
+
+      const result = await response.json();
+      console.log(result);
+      return "ok";
+    } catch (e) {
+      console.error(e);
+      return "error";
+    }
   }
 
   return (
@@ -27,7 +39,7 @@ export function ContactMeSection(): JSX.Element {
         </ThemedExternalLink>
         , or feel free to send me a message via the form below.
       </p>
-      <ContactForm onValidSubmit={mockApiCall} />
+      <ContactForm onValidSubmit={onSubmit} />
     </div>
   );
 }

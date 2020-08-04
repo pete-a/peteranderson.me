@@ -16,7 +16,7 @@ function validEmail(email: string): boolean {
   return re.test(String(email).toLowerCase());
 }
 
-function validateForm(
+export function validateForm(
   name: string,
   email: string,
   message: string
@@ -47,12 +47,14 @@ function validateForm(
   return { tag: "error", errors: newErrors };
 }
 
+export type MessageData = {
+  name: string;
+  email: string;
+  message: string;
+};
+
 interface Props {
-  onValidSubmit: (data: {
-    name: string;
-    email: string;
-    message: string;
-  }) => Promise<"ok" | "error">;
+  onValidSubmit: (data: MessageData) => Promise<"ok" | "error">;
 }
 
 export function ContactForm(props: Props): JSX.Element {
