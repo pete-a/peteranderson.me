@@ -40,7 +40,6 @@ export function Header({ theme, setTheme }: IProps): JSX.Element {
   }
 
   const router = useRouter();
-
   return (
     <div className={styles.fixedContainer}>
       <div className={styles.container}>
@@ -49,12 +48,6 @@ export function Header({ theme, setTheme }: IProps): JSX.Element {
           <Link href="/technology">
             <a className={currentClassName(router, "/technology", styles)}>
               Technology
-              <span className={styles.activeTab}></span>
-            </a>
-          </Link>
-          <Link href="/experience">
-            <a className={currentClassName(router, "/experience", styles)}>
-              Experience
               <span className={styles.activeTab}></span>
             </a>
           </Link>
@@ -104,11 +97,6 @@ export function Header({ theme, setTheme }: IProps): JSX.Element {
           <Link href="/technology">
             <a onClick={onLinkClick} className={styles.navLink}>
               Technology
-            </a>
-          </Link>
-          <Link href="/experience">
-            <a onClick={onLinkClick} className={styles.navLink}>
-              Experience
             </a>
           </Link>
           <Link href="/contact-me">
