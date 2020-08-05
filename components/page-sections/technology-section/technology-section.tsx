@@ -7,14 +7,12 @@ export function TechnologySection(): JSX.Element {
   return (
     <div className={styles.container} id="technology">
       <div className={styles.content}>
-        <div className={styles.content}>
-          <ThemedHeading size="h2">Technology</ThemedHeading>
-          <p>
-            I use these languages, frameworks and platforms to turn business
-            ideas into reality
-          </p>
-          <ThemedTechnologyGrid />
-        </div>
+        <ThemedHeading size="h2">Technology</ThemedHeading>
+        <p>
+          I use these languages, frameworks and platforms to turn business ideas
+          into reality
+        </p>
+        <ThemedTechnologyGrid />
       </div>
     </div>
   );

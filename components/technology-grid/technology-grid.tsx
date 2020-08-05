@@ -18,19 +18,19 @@ import SvgFastapi from "../technology-logos/fastapi.svg";
 import { ThemeContext } from "../theme-context";
 import { createThemedStyles } from "../../utils/styles";
 
-const logos = [
-  SvgTypescript,
-  SvgJavascript,
-  SvgPython,
-  SvgReact,
-  SvgRedux,
-  SvgNextjs,
-  SvgNodejs,
-  SvgGraphql,
-  SvgFastapi,
-  SvgAws,
-  SvgDocker,
-  SvgPostgresql,
+const logos: [(props: { theme: Theme }) => JSX.Element, string][] = [
+  [SvgTypescript, "https://www.typescriptlang.org/"],
+  [SvgJavascript, "https://developer.mozilla.org/en-US/docs/Web/JavaScript"],
+  [SvgPython, "https://www.python.org/"],
+  [SvgReact, "https://reactjs.org/"],
+  [SvgRedux, "https://redux.js.org/"],
+  [SvgNextjs, "https://nextjs.org/"],
+  [SvgNodejs, "https://nodejs.org/"],
+  [SvgGraphql, "https://graphql.org/"],
+  [SvgFastapi, "https://fastapi.tiangolo.com/"],
+  [SvgAws, "https://aws.amazon.com/"],
+  [SvgDocker, "https://www.docker.com/"],
+  [SvgPostgresql, "https://www.postgresql.org/"],
 ];
 
 export const TechnologyGrid = React.memo(
@@ -39,21 +39,21 @@ export const TechnologyGrid = React.memo(
       darkStyles,
       lightStyles,
     });
-    const reactLogos = logos.map((logo) =>
-      React.createElement(logo, { theme })
-    );
 
     return (
       <div className={styles.container}>
         <div className={styles.content}>
-          {reactLogos.map((logo, i) => (
-            <div
+          {logos.map(([logo, url], i) => (
+            <a
               key={`logo-${i}`}
               className={styles.logoContainer}
               style={{ animationDelay: `${100 * i}ms` }}
+              href={url}
+              target="_blank"
+              rel="noreferrer"
             >
-              {logo}
-            </div>
+              {React.createElement(logo, { theme })}
+            </a>
           ))}
         </div>
       </div>
