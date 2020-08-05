@@ -14,4 +14,9 @@
 .navLink,
 .navLink:visited {
   color: colors.$primaryTextColor;
+  position: relative;
+}
+
+.activeTab {
+  background-color: hsl(colors.$hue, 70%, 50);
 }

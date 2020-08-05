@@ -98,3 +98,20 @@
     opacity: 1;
   }
 }
+
+.current .activeTab {
+  left: 0;
+  width: 100%;
+}
+
+.activeTab {
+  width: 0;
+  left: 50%;
+  display: block;
+  height: 2px;
+  margin: 0 auto;
+  bottom: -4px;
+  position: absolute;
+  border-radius: 2px;
+  transition: width 500ms, left 500ms;
+}

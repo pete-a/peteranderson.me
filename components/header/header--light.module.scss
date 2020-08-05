@@ -7,8 +7,13 @@
 .navLink,
 .navLink:visited {
   color: colors.$primaryTextColor;
+  position: relative;
 }
 
 .navLink:active {
   outline: dashed 1px lighten(colors.$secondaryTextColor, 40%);
+}
+
+.activeTab {
+  background-color: hsl(colors.$hue, 70%, 70%);
 }

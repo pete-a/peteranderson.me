@@ -12,6 +12,7 @@ import { ThemedSvgGitHub } from "../icons/github.svg";
 import { ThemedSvgLinkedIn } from "../icons/linkedin.svg";
 import { ThemedLogo } from "../logo/logo";
 import Link from "next/link";
+import { useRouter, NextRouter } from "next/router";
 
 interface IProps {
   theme: Theme;
@@ -26,7 +27,6 @@ export function Header({ theme, setTheme }: IProps): JSX.Element {
   const styles = createThemedStyles(theme, baseStyles, {
     lightStyles,
     darkStyles,
-    autoStyles: {},
   });
 
   function toggleHamburgerMenuStatus() {
@@ -39,19 +39,30 @@ export function Header({ theme, setTheme }: IProps): JSX.Element {
     }
   }
 
+  const router = useRouter();
+
   return (
     <div className={styles.fixedContainer}>
       <div className={styles.container}>
         <ThemedLogo />
         <div className={styles.desktopLinks}>
           <Link href="/technology">
-            <a className={styles.navLink}>Technology</a>
+            <a className={currentClassName(router, "/technology", styles)}>
+              Technology
+              <span className={styles.activeTab}></span>
+            </a>
           </Link>
           <Link href="/experience">
-            <a className={styles.navLink}>Experience</a>
+            <a className={currentClassName(router, "/experience", styles)}>
+              Experience
+              <span className={styles.activeTab}></span>
+            </a>
           </Link>
           <Link href="/contact-me">
-            <a className={styles.navLink}>Contact me</a>
+            <a className={currentClassName(router, "/contact-me", styles)}>
+              Contact me
+              <span className={styles.activeTab}></span>
+            </a>
           </Link>
           <div className={styles.spacer} />
           <div className={styles.socialLinksContainer}>
@@ -147,4 +158,9 @@ export function Header({ theme, setTheme }: IProps): JSX.Element {
       </div>
     </div>
   );
+}
+
+function currentClassName(router: NextRouter, path: string, styles): string {
+  const current = router.pathname === path ? styles.current : "";
+  return `${styles.navLink} ${current}`;
 }

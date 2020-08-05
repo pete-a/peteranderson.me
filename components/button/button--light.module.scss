@@ -2,7 +2,7 @@
 
 .button,
 .buttonLoading {
-  background: hsl(colors.$hue, 100%, 50%);
+  background: hsl(colors.$hue, 80%, 50%);
   border: solid 1px hsl(colors.$hue, 100%, 40%);
 
   &:disabled {

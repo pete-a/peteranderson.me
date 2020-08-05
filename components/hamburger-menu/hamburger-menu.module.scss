@@ -8,6 +8,7 @@
   top: 80px;
   position: fixed;
   line-height: 1.1em;
+  box-sizing: border-box;
 }
 
 .open a {
@@ -17,7 +18,7 @@
 $animationSpeed: 300ms;
 
 .closed {
-  max-height: 0px;
+  max-height: 0;
   transition: max-height $animationSpeed;
 }
 
