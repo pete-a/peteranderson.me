@@ -43,11 +43,19 @@ export function Header({ theme, setTheme }: IProps): JSX.Element {
   return (
     <div className={styles.fixedContainer}>
       <div className={styles.container}>
-        <ThemedLogo />
+        <div onClick={onLinkClick}>
+          <ThemedLogo />
+        </div>
         <div className={styles.desktopLinks}>
           <Link href="/technology">
             <a className={currentClassName(router, "/technology", styles)}>
               Technology
+              <span className={styles.activeTab}></span>
+            </a>
+          </Link>
+          <Link href="/articles">
+            <a className={currentClassName(router, "/articles", styles)}>
+              Articles
               <span className={styles.activeTab}></span>
             </a>
           </Link>
@@ -97,6 +105,11 @@ export function Header({ theme, setTheme }: IProps): JSX.Element {
           <Link href="/technology">
             <a onClick={onLinkClick} className={styles.navLink}>
               Technology
+            </a>
+          </Link>
+          <Link href="/articles">
+            <a onClick={onLinkClick} className={styles.navLink}>
+              Articles
             </a>
           </Link>
           <Link href="/contact-me">
@@ -149,6 +162,6 @@ export function Header({ theme, setTheme }: IProps): JSX.Element {
 }
 
 function currentClassName(router: NextRouter, path: string, styles): string {
-  const current = router.pathname === path ? styles.current : "";
+  const current = router.pathname.startsWith(path) ? styles.current : "";
   return `${styles.navLink} ${current}`;
 }

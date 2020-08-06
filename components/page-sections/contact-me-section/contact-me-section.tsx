@@ -16,8 +16,7 @@ export function ContactMeSection(): JSX.Element {
         return "error";
       }
 
-      const result = await response.json();
-      console.log(result);
+      await response.json();
       return "ok";
     } catch (e) {
       console.error(e);

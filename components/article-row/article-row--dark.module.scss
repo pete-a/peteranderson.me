@@ -1,0 +1,5 @@
+@use "../../styling/colors--dark.scss" as colors;
+.row {
+  background: hsl(colors.$hue, 10%, 17%);
+  color: hsl(colors.$hue, 10%, 80%);
+}

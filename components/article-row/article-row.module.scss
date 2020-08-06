@@ -1,0 +1,54 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  border-radius: 4px;
+  overflow: hidden;
+  align-items: center;
+
+  h4:hover {
+    text-decoration: underline;
+  }
+
+  &:hover {
+    .imageCell {
+      filter: none;
+    }
+  }
+}
+
+.latest {
+  align-items: flex-start;
+  .imageCell {
+    filter: none;
+  }
+}
+
+.textCell {
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.imageCell {
+  display: block;
+  filter: grayscale(0.7);
+  flex: 0 0 auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.description {
+  font-size: 0.9em;
+}
+
+.linkWrapper {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+@media (max-width: 750px) {
+  .imageCell {
+    display: none;
+  }
+}

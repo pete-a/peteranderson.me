@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.scss";
+import "./prism.scss";
 import { ThemeSwitcher } from "../components/theme-switcher";
 import { useEffect, useState } from "react";
 import { ThemeContext } from "../components/theme-context";
@@ -31,7 +32,8 @@ export default function MyApp(props: Props & AppPropsType): JSX.Element {
   const router = useRouter();
 
   useEffect(() => {
-    document.cookie = `theme=${theme.name}; SameSite=Lax`;
+    document.cookie = `theme=${theme.name}; SameSite=Lax; path=/;`;
+    document.body.setAttribute("data-theme", theme.name);
   }, [theme]);
 
   useEffect(() => {

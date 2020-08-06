@@ -1,0 +1,9 @@
+@use "../../styling/colors--light.scss" as colors;
+.row {
+  color: hsl(colors.$hue, 10%, 17%);
+  background: hsl(colors.$hue, 1%, 94%);
+}
+
+.description {
+  color: hsl(colors.$hue, 10%, 45%);
+}

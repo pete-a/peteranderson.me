@@ -15,7 +15,10 @@
     "@svgr/webpack": "^5.4.0",
     "@zeit/next-sass": "^1.0.1",
     "aws-sdk": "^2.726.0",
+    "date-fns": "^2.15.0",
+    "markdown-to-jsx": "^6.11.4",
     "next": "~9.5.0",
+    "prismjs": "^1.20.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "sass": "^1.26.10"

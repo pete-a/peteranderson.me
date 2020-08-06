@@ -1,0 +1,14 @@
+.content {
+  color: #fafafa;
+}
+
+.content a,
+.content a:visited {
+  color: white;
+}
+
+:global {
+  .comic-container {
+    border: solid 1px #112;
+  }
+}

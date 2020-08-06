@@ -6,11 +6,12 @@ import { createThemedStyles } from "../../utils/styles";
 import { Theme } from "../theme";
 import { ThemeContext } from "../theme-context";
 
-type HeadingSize = "h1" | "h2" | "h3";
+type HeadingSize = "h1" | "h2" | "h3" | "h4";
 
 interface Props {
   size: HeadingSize;
   theme: Theme;
+  style?: React.CSSProperties;
 }
 
 export function Heading(props: PropsWithChildren<Props>): JSX.Element {
@@ -19,7 +20,10 @@ export function Heading(props: PropsWithChildren<Props>): JSX.Element {
     darkStyles,
   });
   return (
-    <props.size className={`${style.heading} ${style[props.size]}`}>
+    <props.size
+      style={props.style}
+      className={`${style.heading} ${style[props.size]}`}
+    >
       {props.children}
     </props.size>
   );

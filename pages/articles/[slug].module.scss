@@ -1,0 +1,78 @@
+.container {
+  padding-top: 40px;
+}
+
+.title {
+  text-align: center;
+  padding-top: 40px;
+  margin-bottom: 20px;
+}
+
+.content {
+  line-height: 1.5em;
+  font-size: 1.25em;
+  max-width: 800px;
+  margin: 60px auto;
+}
+
+.heroImage {
+  width: 100%;
+  margin: 0;
+  line-height: 1em;
+  border-radius: 4px;
+}
+
+.heroImageReference {
+  display: block;
+  line-height: 0.6em;
+  font-size: 0.6em;
+  text-align: right;
+  margin-bottom: 40px;
+}
+
+.articleDate {
+  font-size: 0.75em;
+  line-height: 1em;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.content {
+  margin-bottom: 120px;
+}
+
+@media (max-width: 750px) {
+  .title {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 400px) {
+  .title {
+    font-size: 0.65em;
+  }
+}
+
+:global {
+  .comic-container {
+    text-align: center;
+    margin: 40px auto 40px auto;
+    display: block;
+    width: 80%;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .comic-container img {
+    display: block;
+    width: 100%;
+  }
+
+  @media (max-width: 820px) {
+    .comic-container {
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+}
