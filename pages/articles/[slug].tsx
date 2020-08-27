@@ -80,7 +80,10 @@ function ArticlePage({ article }: Props): JSX.Element {
                     <Markdown>{article.heroImageReference}</Markdown>
                   </div>
                 )}
-                <div dangerouslySetInnerHTML={{ __html: article.html }}></div>
+                <div
+                  className={styles.articleContent}
+                  dangerouslySetInnerHTML={{ __html: article.html }}
+                ></div>
               </div>
               <Footer />
             </div>
