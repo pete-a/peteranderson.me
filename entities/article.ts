@@ -56,7 +56,10 @@ export async function articleFromSlug(slug: string): Promise<Article | null> {
     title: articleData.title,
     tags: [], // TODO
     slug: articleData.slug,
-    html: articleData.html,
+    html: (articleData.html || "").replace(
+      new RegExp(process.env["CMS_IMAGE_BASE_URL"] || "", "g"),
+      "https://cdn.peteranderson.me"
+    ),
     date: articleData["published_at"],
     updatedAt: articleData["updated_at"],
     heroImage: articleData["feature_image"],
