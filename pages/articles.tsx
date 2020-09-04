@@ -11,6 +11,7 @@ import {
 import { ThemeContext } from "../components/theme-context";
 import { createThemedStyles } from "../utils/styles";
 import { ThemedArticleRow } from "../components/article-row/article-row";
+import Head from "next/head";
 
 interface Props {
   articles: SimpleArticle[];
@@ -27,6 +28,9 @@ function ArticlesPage(props: Props): JSX.Element {
         });
         return (
           <div className={styles.container}>
+            <Head>
+              <title>Articles | Peter Anderson </title>
+            </Head>
             <ThemedHeading size="h2">Articles</ThemedHeading>
             <div className={styles.articlesContainer}>
               <ThemedHeading size="h3">Latest</ThemedHeading>

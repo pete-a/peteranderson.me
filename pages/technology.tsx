@@ -6,7 +6,7 @@ function TechnologyPage(): JSX.Element {
   return (
     <>
       <Head>
-        <title>Peter Anderson | Technology</title>
+        <title>Technology | Peter Anderson</title>
       </Head>
       <TechnologySection />
     </>

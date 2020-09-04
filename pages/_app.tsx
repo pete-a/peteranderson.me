@@ -50,7 +50,7 @@ export default function MyApp(props: Props & AppPropsType): JSX.Element {
   return (
     <>
       <Head>
-        <title>Peter Anderson | Freelance web developer and consultant</title>
+        <title>Freelance web developer | Peter Anderson</title>
         <meta
           name="description"
           content="I am a full stack freelance web developer with over 12 years commerical experience"

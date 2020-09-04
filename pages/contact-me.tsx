@@ -6,7 +6,7 @@ function ContactMePage(): JSX.Element {
   return (
     <>
       <Head>
-        <title>Peter Anderson | Contact me</title>
+        <title>Contact me | Peter Anderson </title>
       </Head>
       <ContactMeSection />
     </>

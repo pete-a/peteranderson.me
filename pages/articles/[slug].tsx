@@ -34,7 +34,7 @@ function ArticlePage({ article }: Props): JSX.Element {
         return (
           <>
             <Head>
-              <title>Peter Anderson | {article.title}</title>
+              <title>{article.title} | Peter Anderson</title>
               {article.description && (
                 <>
                   <meta name="description" content={article.description} />
