@@ -11,8 +11,21 @@
 .content {
   line-height: 1.5em;
   font-size: 1.25em;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 60px auto;
+}
+
+.content h2 {
+  margin-top: 80px;
+}
+.content p,
+.content ul,
+.content ol {
+  font-family: "Source Serif Pro", Georgia, "Times New Roman", Times, serif;
+  line-height: 1.75;
+  font-size: 1.1em;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 .heroImage {

@@ -1,6 +1,6 @@
 @use "./base";
 $hue: base.$hue;
 
-$backgroundColor: hsl($hue, 10%, 20%);
+$backgroundColor: hsl($hue, 10%, 15%);
 $primaryTextColor: hsl($hue, 40%, 99%);
 $secondaryTextColor: hsl($hue, 10%, 85%);

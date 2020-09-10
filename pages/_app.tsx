@@ -62,6 +62,10 @@ export default function MyApp(props: Props & AppPropsType): JSX.Element {
           async
           src="https://www.googletagmanager.com/gtag/js?id=UA-53493739-1"
         ></script>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,700;1,400&display=swap"
+          rel="stylesheet"
+        ></link>
         <script
           dangerouslySetInnerHTML={{
             __html: `
